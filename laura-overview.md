@@ -53,18 +53,18 @@ You open the app, click **Sync All**, and the system imports all new data. Then 
 
 ### Wireframes to Review
 
-Open these in your browser to see the proposed interface:
+Click the links below to see the proposed interface in your browser:
 
 | Page | Purpose | Link |
 |------|---------|------|
-| **Dashboard** | Overview of all 16 clients at a glance | [index.html](https://github.com/Topsy31/Socialife/blob/main/wireframe/index.html) |
-| **Clients** | Add, edit, archive clients with their branding | [clients.html](https://github.com/Topsy31/Socialife/blob/main/wireframe/clients.html) |
-| **Import Data** | Folder sync or manual CSV upload | [import.html](https://github.com/Topsy31/Socialife/blob/main/wireframe/import.html) |
-| **Content Calendar** | Plan and schedule posts with AI suggestions | [calendar.html](https://github.com/Topsy31/Socialife/blob/main/wireframe/calendar.html) |
-| **Settings** | Configure AI, branding, backups | [settings.html](https://github.com/Topsy31/Socialife/blob/main/wireframe/settings.html) |
-| **Report Preview** | White-labelled PDF report view | [report.html](https://github.com/Topsy31/Socialife/blob/main/wireframe/report.html) |
+| **Dashboard** | Overview of all 16 clients at a glance | [View Dashboard](https://topsy31.github.io/Socialife/wireframe/index.html) |
+| **Clients** | Add, edit, archive clients with their branding | [View Clients](https://topsy31.github.io/Socialife/wireframe/clients.html) |
+| **Import Data** | Folder sync or manual CSV upload | [View Import](https://topsy31.github.io/Socialife/wireframe/import.html) |
+| **Content Calendar** | Plan and schedule posts with AI suggestions | [View Calendar](https://topsy31.github.io/Socialife/wireframe/calendar.html) |
+| **Settings** | Configure AI, branding, backups | [View Settings](https://topsy31.github.io/Socialife/wireframe/settings.html) |
+| **Report Preview** | White-labelled PDF report view | [View Report](https://topsy31.github.io/Socialife/wireframe/report.html) |
 
-**To view:** Download the HTML file and open in your browser, or view the code on GitHub.
+**Start here:** [Dashboard](https://topsy31.github.io/Socialife/wireframe/index.html) — then use the sidebar to navigate between pages.
 
 ---
 

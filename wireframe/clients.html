@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Management - Socialife Analytics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'socialife-blue': '#066aab',
+                        'socialife-dark': '#32373c',
+                        'socialife-light': '#f8f9fa',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #066aab 0%, #0891b2 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Sidebar -->
+    <aside class="fixed left-0 top-0 h-full w-64 bg-socialife-dark text-white shadow-xl z-50">
+        <div class="p-6 border-b border-white/10">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
+                    <span class="text-white font-bold text-lg">S</span>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg">Socialife</h1>
+                    <p class="text-xs text-gray-400">Analytics Dashboard</p>
+                </div>
+            </div>
+        </div>
+
+        <nav class="p-4 space-y-2">
+            <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-white/10 transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6z"></path>
+                </svg>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-socialife-blue text-white">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span class="font-medium">Clients</span>
+            </a>
+            <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-white/10 transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2z"></path>
+                </svg>
+                <span>Analytics</span>
+            </a>
+            <a href="report.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-white/10 transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                <span>Reports</span>
+            </a>
+            <a href="import.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-white/10 transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+                </svg>
+                <span>Import Data</span>
+            </a>
+            <a href="calendar.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-white/10 transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <span>Content Calendar</span>
+            </a>
+            <a href="settings.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-white/10 transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span>Settings</span>
+            </a>
+        </nav>
+
+        <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-white/10">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-socialife-blue flex items-center justify-center">
+                    <span class="text-white font-medium">LJ</span>
+                </div>
+                <div>
+                    <p class="font-medium text-sm">Laura-Jayne</p>
+                    <p class="text-xs text-gray-400">Director</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="ml-64 p-8">
+        <!-- Header -->
+        <header class="flex items-center justify-between mb-8">
+            <div>
+                <h1 class="text-2xl font-bold text-socialife-dark">Client Management</h1>
+                <p class="text-gray-500">Manage your client portfolio</p>
+            </div>
+            <button onclick="document.getElementById('newClientModal').classList.remove('hidden')" class="px-4 py-2 bg-socialife-blue text-white rounded-lg hover:bg-opacity-90 transition flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                </svg>
+                Add New Client
+            </button>
+        </header>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-4 gap-6 mb-8">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-500">Active Clients</p>
+                        <p class="text-3xl font-bold text-socialife-dark">16</p>
+                    </div>
+                    <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-500">Archived</p>
+                        <p class="text-3xl font-bold text-socialife-dark">4</p>
+                    </div>
+                    <div class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-500">Total Platforms</p>
+                        <p class="text-3xl font-bold text-socialife-dark">52</p>
+                    </div>
+                    <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-500">Reports This Month</p>
+                        <p class="text-3xl font-bold text-socialife-dark">14</p>
+                    </div>
+                    <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filters & Search -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 mb-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <div class="relative">
+                        <svg class="w-5 h-5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                        <input type="text" placeholder="Search clients..." class="pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-socialife-blue w-64">
+                    </div>
+                    <div class="flex items-center gap-2 border-l border-gray-200 pl-4">
+                        <button class="px-3 py-1.5 bg-socialife-blue text-white rounded-lg text-sm">All</button>
+                        <button class="px-3 py-1.5 text-gray-600 hover:bg-gray-100 rounded-lg text-sm">Active</button>
+                        <button class="px-3 py-1.5 text-gray-600 hover:bg-gray-100 rounded-lg text-sm">Archived</button>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button class="px-3 py-2 border border-gray-200 rounded-lg hover:bg-gray-50 text-sm flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+                        </svg>
+                        Export All
+                    </button>
+                    <button class="px-3 py-2 border border-gray-200 rounded-lg hover:bg-gray-50 text-sm flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        Batch Reports
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Client List -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+            <table class="w-full">
+                <thead class="bg-gray-50 border-b border-gray-100">
+                    <tr>
+                        <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            <input type="checkbox" class="rounded border-gray-300">
+                        </th>
+                        <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Client</th>
+                        <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Industry</th>
+                        <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Platforms</th>
+                        <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                        <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Last Import</th>
+                        <th class="px-6 py-4 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+                    <!-- Client Row 1 -->
+                    <tr class="hover:bg-gray-50 transition">
+                        <td class="px-6 py-4">
+                            <input type="checkbox" class="rounded border-gray-300">
+                        </td>
+                        <td class="px-6 py-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center">
+                                    <span class="font-semibold text-orange-600">ES</span>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-socialife-dark">Essex Sports Club</p>
+                                    <p class="text-sm text-gray-500">john@essexsports.co.uk</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 text-gray-600">Sports & Fitness</td>
+                        <td class="px-6 py-4">
+                            <div class="flex items-center gap-1">
+                                <span class="w-6 h-6 rounded bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 flex items-center justify-center text-white text-xs">IG</span>
+                                <span class="w-6 h-6 rounded bg-blue-600 flex items-center justify-center text-white text-xs">FB</span>
+                                <span class="w-6 h-6 rounded bg-black flex items-center justify-center text-white text-xs">TT</span>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4">
+                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">Active</span>
+                        </td>
+                        <td class="px-6 py-4 text-gray-500 text-sm">28 Jan 2026</td>
+                        <td class="px-6 py-4 text-right">
+                            <div class="flex items-center justify-end gap-2">
+                                <button class="p-2 text-gray-400 hover:text-socialife-blue hover:bg-gray-100 rounded-lg" title="View">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                    </svg>
+                                </button>
+                                <button class="p-2 text-gray-400 hover:text-socialife-blue hover:bg-gray-100 rounded-lg" title="Edit">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                                    </svg>
+                                </button>
+                                <button class="p-2 text-gray-400 hover:text-orange-500 hover:bg-orange-50 rounded-lg" title="Archive">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Client Row 2 -->
+                    <tr class="hover:bg-gray-50 transition">
+                        <td class="px-6 py-4">
+                            <input type="checkbox" class="rounded border-gray-300">
+                        </td>
+                        <td class="px-6 py-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-pink-100 flex items-center justify-center">
+                                    <span class="font-semibold text-pink-600">BB</span>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-socialife-dark">Bella's Boutique</p>
+                                    <p class="text-sm text-gray-500">bella@bellasboutique.com</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 text-gray-600">Fashion & Retail</td>
+                        <td class="px-6 py-4">
+                            <div class="flex items-center gap-1">
+                                <span class="w-6 h-6 rounded bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 flex items-center justify-center text-white text-xs">IG</span>
+                                <span class="w-6 h-6 rounded bg-blue-600 flex items-center justify-center text-white text-xs">FB</span>
+                                <span class="w-6 h-6 rounded bg-black flex items-center justify-center text-white text-xs">TT</span>
+                                <span class="w-6 h-6 rounded bg-sky-600 flex items-center justify-center text-white text-xs">LI</span>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4">
+                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">Active</span>
+                        </td>
+                        <td class="px-6 py-4 text-gray-500 text-sm">27 Jan 2026</td>
+                        <td class="px-6 py-4 text-right">
+                            <div class="flex items-center justify-end gap-2">
+                                <button class="p-2 text-gray-400 hover:text-socialife-blue hover:bg-gray-100 rounded-lg" title="View">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                    </svg>
+                                </button>
+                                <button class="p-2 text-gray-400 hover:text-socialife-blue hover:bg-gray-100 rounded-lg" title="Edit">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                                    </svg>
+                                </button>
+                                <button class="p-2 text-gray-400 hover:text-orange-500 hover:bg-orange-50 rounded-lg" title="Archive">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Client Row 3 -->
+                    <tr class="hover:bg-gray-50 transition">
+                        <td class="px-6 py-4">
+                            <input type="checkbox" class="rounded border-gray-300">
+                        </td>
+                        <td class="px-6 py-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
+                                    <span class="font-semibold text-blue-600">CP</span>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-socialife-dark">Castle Point Finance</p>
+                                    <p class="text-sm text-gray-500">info@cpfinance.co.uk</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 text-gray-600">Financial Services</td>
+                        <td class="px-6 py-4">
+                            <div class="flex items-center gap-1">
+                                <span class="w-6 h-6 rounded bg-blue-600 flex items-center justify-center text-white text-xs">FB</span>
+                                <span class="w-6 h-6 rounded bg-sky-600 flex items-center justify-center text-white text-xs">LI</span>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4">
+                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">Active</span>
+                        </td>
+                        <td class="px-6 py-4 text-gray-500 text-sm">25 Jan 2026</td>
+                        <td class="px-6 py-4 text-right">
+                            <div class="flex items-center justify-end gap-2">
+                                <button class="p-2 text-gray-400 hover:text-socialife-blue hover:bg-gray-100 rounded-lg" title="View">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                    </svg>
+                                </button>
+                                <button class="p-2 text-gray-400 hover:text-socialife-blue hover:bg-gray-100 rounded-lg" title="Edit">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                                    </svg>
+                                </button>
+                                <button class="p-2 text-gray-400 hover:text-orange-500 hover:bg-orange-50 rounded-lg" title="Archive">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Archived Client Row -->
+                    <tr class="hover:bg-gray-50 transition bg-gray-50/50">
+                        <td class="px-6 py-4">
+                            <input type="checkbox" class="rounded border-gray-300">
+                        </td>
+                        <td class="px-6 py-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-gray-200 flex items-center justify-center">
+                                    <span class="font-semibold text-gray-500">OC</span>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-gray-500">Old Client Ltd</p>
+                                    <p class="text-sm text-gray-400">contact@oldclient.com</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 text-gray-400">Professional Services</td>
+                        <td class="px-6 py-4">
+                            <div class="flex items-center gap-1 opacity-50">
+                                <span class="w-6 h-6 rounded bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 flex items-center justify-center text-white text-xs">IG</span>
+                                <span class="w-6 h-6 rounded bg-blue-600 flex items-center justify-center text-white text-xs">FB</span>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4">
+                            <span class="px-2 py-1 bg-gray-100 text-gray-500 rounded-full text-xs font-medium">Archived</span>
+                        </td>
+                        <td class="px-6 py-4 text-gray-400 text-sm">15 Dec 2025</td>
+                        <td class="px-6 py-4 text-right">
+                            <div class="flex items-center justify-end gap-2">
+                                <button class="p-2 text-gray-400 hover:text-socialife-blue hover:bg-gray-100 rounded-lg" title="View History">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                    </svg>
+                                </button>
+                                <button class="p-2 text-gray-400 hover:text-green-500 hover:bg-green-50 rounded-lg" title="Reactivate">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                                    </svg>
+                                </button>
+                                <button class="p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg" title="Delete Permanently">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Pagination -->
+            <div class="p-4 border-t border-gray-100 flex items-center justify-between">
+                <p class="text-sm text-gray-500">Showing 4 of 20 clients</p>
+                <div class="flex items-center gap-2">
+                    <button class="px-3 py-1 border border-gray-200 rounded-lg text-sm hover:bg-gray-50">Previous</button>
+                    <button class="px-3 py-1 bg-socialife-blue text-white rounded-lg text-sm">1</button>
+                    <button class="px-3 py-1 border border-gray-200 rounded-lg text-sm hover:bg-gray-50">2</button>
+                    <button class="px-3 py-1 border border-gray-200 rounded-lg text-sm hover:bg-gray-50">3</button>
+                    <button class="px-3 py-1 border border-gray-200 rounded-lg text-sm hover:bg-gray-50">Next</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- New Client Modal -->
+    <div id="newClientModal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center">
+        <div class="bg-white rounded-2xl shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+            <!-- Modal Header -->
+            <div class="p-6 border-b border-gray-100 flex items-center justify-between sticky top-0 bg-white">
+                <div>
+                    <h2 class="text-xl font-semibold text-socialife-dark">Add New Client</h2>
+                    <p class="text-sm text-gray-500">Set up a new client account</p>
+                </div>
+                <button onclick="document.getElementById('newClientModal').classList.add('hidden')" class="p-2 hover:bg-gray-100 rounded-lg">
+                    <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="p-6 space-y-6">
+                <!-- Step Indicator -->
+                <div class="flex items-center justify-between mb-8">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-socialife-blue text-white flex items-center justify-center text-sm font-medium">1</div>
+                        <span class="text-sm font-medium text-socialife-dark">Profile</span>
+                    </div>
+                    <div class="flex-1 h-0.5 bg-gray-200 mx-4"></div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center text-sm font-medium">2</div>
+                        <span class="text-sm text-gray-500">Branding</span>
+                    </div>
+                    <div class="flex-1 h-0.5 bg-gray-200 mx-4"></div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center text-sm font-medium">3</div>
+                        <span class="text-sm text-gray-500">Platforms</span>
+                    </div>
+                </div>
+
+                <!-- Step 1: Profile -->
+                <div class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="col-span-2">
+                            <label class="block text-sm font-medium text-socialife-dark mb-2">Client Name *</label>
+                            <input type="text" placeholder="e.g., Acme Corporation" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-socialife-blue">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-socialife-dark mb-2">Industry</label>
+                            <select class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-socialife-blue">
+                                <option value="">Select industry...</option>
+                                <option>Sports & Fitness</option>
+                                <option>Fashion & Retail</option>
+                                <option>Food & Beverage</option>
+                                <option>Financial Services</option>
+                                <option>Health & Wellness</option>
+                                <option>Professional Services</option>
+                                <option>Technology</option>
+                                <option>Real Estate</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-socialife-dark mb-2">Contract Start Date</label>
+                            <input type="date" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-socialife-blue">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-socialife-dark mb-2">Primary Contact</label>
+                            <input type="text" placeholder="Contact name" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-socialife-blue">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-socialife-dark mb-2">Contact Email</label>
+                            <input type="email" placeholder="email@example.com" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-socialife-blue">
+                        </div>
+                        <div class="col-span-2">
+                            <label class="block text-sm font-medium text-socialife-dark mb-2">Website</label>
+                            <input type="url" placeholder="https://www.example.com" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-socialife-blue">
+                        </div>
+                        <div class="col-span-2">
+                            <label class="block text-sm font-medium text-socialife-dark mb-2">Notes</label>
+                            <textarea rows="3" placeholder="Any special requirements or notes..." class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-socialife-blue resize-none"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Platform Quick Add (Preview of Step 3) -->
+                <div class="border-t border-gray-100 pt-6">
+                    <label class="block text-sm font-medium text-socialife-dark mb-3">Social Media Platforms</label>
+                    <div class="grid grid-cols-4 gap-3">
+                        <label class="relative flex items-center justify-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-socialife-blue transition">
+                            <input type="checkbox" class="sr-only peer">
+                            <div class="text-center peer-checked:text-socialife-blue">
+                                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 flex items-center justify-center mx-auto mb-2">
+                                    <span class="text-white font-medium">IG</span>
+                                </div>
+                                <span class="text-sm">Instagram</span>
+                            </div>
+                            <div class="absolute top-2 right-2 w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:bg-socialife-blue peer-checked:border-socialife-blue flex items-center justify-center">
+                                <svg class="w-3 h-3 text-white hidden peer-checked:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                        </label>
+                        <label class="relative flex items-center justify-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-socialife-blue transition">
+                            <input type="checkbox" class="sr-only peer">
+                            <div class="text-center peer-checked:text-socialife-blue">
+                                <div class="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center mx-auto mb-2">
+                                    <span class="text-white font-medium">FB</span>
+                                </div>
+                                <span class="text-sm">Facebook</span>
+                            </div>
+                            <div class="absolute top-2 right-2 w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:bg-socialife-blue peer-checked:border-socialife-blue"></div>
+                        </label>
+                        <label class="relative flex items-center justify-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-socialife-blue transition">
+                            <input type="checkbox" class="sr-only peer">
+                            <div class="text-center peer-checked:text-socialife-blue">
+                                <div class="w-10 h-10 rounded-lg bg-black flex items-center justify-center mx-auto mb-2">
+                                    <span class="text-white font-medium">TT</span>
+                                </div>
+                                <span class="text-sm">TikTok</span>
+                            </div>
+                            <div class="absolute top-2 right-2 w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:bg-socialife-blue peer-checked:border-socialife-blue"></div>
+                        </label>
+                        <label class="relative flex items-center justify-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-socialife-blue transition">
+                            <input type="checkbox" class="sr-only peer">
+                            <div class="text-center peer-checked:text-socialife-blue">
+                                <div class="w-10 h-10 rounded-lg bg-sky-600 flex items-center justify-center mx-auto mb-2">
+                                    <span class="text-white font-medium">LI</span>
+                                </div>
+                                <span class="text-sm">LinkedIn</span>
+                            </div>
+                            <div class="absolute top-2 right-2 w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:bg-socialife-blue peer-checked:border-socialife-blue"></div>
+                        </label>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2">You can add account handles and configure branding after creating the client.</p>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-6 border-t border-gray-100 flex items-center justify-between sticky bottom-0 bg-white">
+                <button onclick="document.getElementById('newClientModal').classList.add('hidden')" class="px-4 py-2 border border-gray-200 rounded-lg hover:bg-gray-50">
+                    Cancel
+                </button>
+                <div class="flex items-center gap-3">
+                    <button class="px-4 py-2 border border-gray-200 rounded-lg hover:bg-gray-50">
+                        Save as Draft
+                    </button>
+                    <button class="px-4 py-2 bg-socialife-blue text-white rounded-lg hover:bg-opacity-90 flex items-center gap-2">
+                        Create Client
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

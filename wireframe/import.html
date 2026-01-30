@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import Data - Socialife Analytics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'socialife-blue': '#066aab',
+                        'socialife-dark': '#32373c',
+                        'socialife-light': '#f8f9fa',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #066aab 0%, #0891b2 100%);
+        }
+        .drop-zone {
+            border: 2px dashed #cbd5e1;
+            transition: all 0.3s ease;
+        }
+        .drop-zone:hover, .drop-zone.dragover {
+            border-color: #066aab;
+            background-color: rgba(6, 106, 171, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Sidebar (same as dashboard) -->
+    <aside class="fixed left-0 top-0 h-full w-64 bg-socialife-dark text-white shadow-xl z-50">
+        <div class="p-6 border-b border-white/10">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
+                    <span class="text-white font-bold text-lg">S</span>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg">Socialife</h1>
+                    <p class="text-xs text-gray-400">Analytics Dashboard</p>
+                </div>
+            </div>
+        </div>
+
+        <nav class="p-4 space-y-2">
+            <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-white/10 transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6z"></path>
+                </svg>
+                <span>Dashboard</span>
+            </a>
+            <a href="clients.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-white/10 transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span>Clients</span>
+            </a>
+            <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-white/10 transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2z"></path>
+                </svg>
+                <span>Analytics</span>
+            </a>
+            <a href="report.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-white/10 transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                <span>Reports</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-socialife-blue text-white">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+                </svg>
+                <span class="font-medium">Import Data</span>
+            </a>
+            <a href="calendar.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-white/10 transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <span>Content Calendar</span>
+            </a>
+            <a href="settings.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-white/10 transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span>Settings</span>
+            </a>
+        </nav>
+
+        <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-white/10">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-socialife-blue flex items-center justify-center">
+                    <span class="text-white font-medium">LJ</span>
+                </div>
+                <div>
+                    <p class="font-medium text-sm">Laura-Jayne</p>
+                    <p class="text-xs text-gray-400">Director</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="ml-64 p-8">
+        <header class="mb-8">
+            <h1 class="text-2xl font-bold text-socialife-dark">Import Analytics Data</h1>
+            <p class="text-gray-500">Sync from shared folder or upload CSV exports manually</p>
+        </header>
+
+        <div class="grid grid-cols-3 gap-8">
+            <!-- Upload Area -->
+            <div class="col-span-2">
+                <!-- Import Method Tabs -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 mb-6">
+                    <div class="flex border-b border-gray-100">
+                        <button id="tab-folder" class="flex-1 px-6 py-4 text-sm font-medium text-socialife-blue border-b-2 border-socialife-blue bg-socialife-blue/5">
+                            <span class="flex items-center justify-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+                                </svg>
+                                Folder Sync
+                            </span>
+                        </button>
+                        <button id="tab-manual" class="flex-1 px-6 py-4 text-sm font-medium text-gray-500 hover:text-socialife-dark">
+                            <span class="flex items-center justify-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+                                </svg>
+                                Manual Upload
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Folder Sync Panel -->
+                <div id="panel-folder" class="space-y-6">
+                    <!-- Data Source Configuration -->
+                    <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                        <h3 class="font-semibold text-socialife-dark mb-4">Data Source</h3>
+                        <div class="grid grid-cols-4 gap-3 mb-6">
+                            <label class="relative cursor-pointer">
+                                <input type="radio" name="data-source" value="local" class="peer sr-only" checked>
+                                <div class="p-4 border-2 border-gray-200 rounded-lg text-center peer-checked:border-socialife-blue peer-checked:bg-socialife-blue/5 transition">
+                                    <svg class="w-8 h-8 mx-auto mb-2 text-gray-400 peer-checked:text-socialife-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+                                    </svg>
+                                    <span class="text-sm font-medium">Local Folder</span>
+                                </div>
+                            </label>
+                            <label class="relative cursor-pointer">
+                                <input type="radio" name="data-source" value="gdrive" class="peer sr-only">
+                                <div class="p-4 border-2 border-gray-200 rounded-lg text-center peer-checked:border-socialife-blue peer-checked:bg-socialife-blue/5 transition">
+                                    <svg class="w-8 h-8 mx-auto mb-2 text-gray-400" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 11L7.5 18h9L12 11zm-1.732 1L5.268 18 2.5 13.5 7.5 5h5L8.536 10.5l1.732 1.5zm7.464 0L15.5 5h-5L8 8.5l4.5 7.5 3.5-2-.268-1.5z"/>
+                                    </svg>
+                                    <span class="text-sm font-medium">Google Drive</span>
+                                </div>
+                            </label>
+                            <label class="relative cursor-pointer">
+                                <input type="radio" name="data-source" value="dropbox" class="peer sr-only">
+                                <div class="p-4 border-2 border-gray-200 rounded-lg text-center peer-checked:border-socialife-blue peer-checked:bg-socialife-blue/5 transition">
+                                    <svg class="w-8 h-8 mx-auto mb-2 text-gray-400" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M6 2l6 4-6 4 6 4-6 4-6-4 6-4-6-4 6-4zm12 0l6 4-6 4 6 4-6 4-6-4 6-4-6-4 6-4zm-6 8l6-4 6 4-6 4-6-4z"/>
+                                    </svg>
+                                    <span class="text-sm font-medium">Dropbox</span>
+                                </div>
+                            </label>
+                            <label class="relative cursor-pointer">
+                                <input type="radio" name="data-source" value="onedrive" class="peer sr-only">
+                                <div class="p-4 border-2 border-gray-200 rounded-lg text-center peer-checked:border-socialife-blue peer-checked:bg-socialife-blue/5 transition">
+                                    <svg class="w-8 h-8 mx-auto mb-2 text-gray-400" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M10.5 18H5a3 3 0 01-.5-5.96A5 5 0 019 7a5 5 0 014.9 4h.1a4 4 0 110 8h-3.5z"/>
+                                    </svg>
+                                    <span class="text-sm font-medium">OneDrive</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- Local Folder Settings -->
+                        <div id="source-local" class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-socialife-dark mb-2">Folder Path</label>
+                                <div class="flex gap-3">
+                                    <input type="text" value="C:\Users\Socialife\Shared\ClientData" class="flex-1 px-4 py-3 border border-gray-200 rounded-lg bg-gray-50 text-socialife-dark focus:outline-none focus:ring-2 focus:ring-socialife-blue" readonly>
+                                    <button class="px-4 py-3 border border-gray-200 rounded-lg text-socialife-dark hover:bg-gray-50 transition">
+                                        Browse...
+                                    </button>
+                                </div>
+                                <p class="text-sm text-gray-500 mt-2">Team members should save CSV exports to this folder</p>
+                            </div>
+                        </div>
+
+                        <!-- Cloud Settings (hidden by default) -->
+                        <div id="source-cloud" class="space-y-4 hidden">
+                            <div class="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                                <div class="flex items-start gap-3">
+                                    <svg class="w-5 h-5 text-yellow-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <div>
+                                        <p class="font-medium text-yellow-800">Connect Cloud Storage</p>
+                                        <p class="text-sm text-yellow-700 mt-1">Click below to authorise access to your cloud storage.</p>
+                                        <button class="mt-3 px-4 py-2 bg-yellow-600 text-white rounded-lg text-sm font-medium hover:bg-yellow-700 transition">
+                                            Connect Account
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sync Preview -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-100">
+                        <div class="p-6 border-b border-gray-100 flex items-center justify-between">
+                            <div>
+                                <h3 class="font-semibold text-socialife-dark">New Files Detected</h3>
+                                <p class="text-sm text-gray-500">Last scanned: 2 minutes ago</p>
+                            </div>
+                            <button class="px-4 py-2 text-socialife-blue border border-socialife-blue rounded-lg text-sm font-medium hover:bg-socialife-blue/5 transition flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                                </svg>
+                                Rescan
+                            </button>
+                        </div>
+
+                        <div class="divide-y divide-gray-100">
+                            <!-- Client Group -->
+                            <div class="p-4">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <input type="checkbox" checked class="w-4 h-4 text-socialife-blue rounded border-gray-300">
+                                    <span class="font-medium text-socialife-dark">Essex Sports Club</span>
+                                    <span class="px-2 py-0.5 bg-green-100 text-green-600 rounded text-xs font-medium">3 new files</span>
+                                </div>
+                                <div class="ml-7 space-y-2">
+                                    <div class="flex items-center gap-3 text-sm">
+                                        <span class="w-8 h-8 rounded bg-pink-100 text-pink-600 flex items-center justify-center font-bold text-xs">IG</span>
+                                        <span class="text-gray-600">instagram/2026-01-metrics.csv</span>
+                                        <span class="text-gray-400">45 posts</span>
+                                    </div>
+                                    <div class="flex items-center gap-3 text-sm">
+                                        <span class="w-8 h-8 rounded bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-xs">FB</span>
+                                        <span class="text-gray-600">facebook/2026-01-insights.csv</span>
+                                        <span class="text-gray-400">38 posts</span>
+                                    </div>
+                                    <div class="flex items-center gap-3 text-sm">
+                                        <span class="w-8 h-8 rounded bg-gray-800 text-white flex items-center justify-center font-bold text-xs">TT</span>
+                                        <span class="text-gray-600">tiktok/2026-01-analytics.csv</span>
+                                        <span class="text-gray-400">12 videos</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Client Group 2 -->
+                            <div class="p-4">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <input type="checkbox" checked class="w-4 h-4 text-socialife-blue rounded border-gray-300">
+                                    <span class="font-medium text-socialife-dark">Bella's Bakery</span>
+                                    <span class="px-2 py-0.5 bg-green-100 text-green-600 rounded text-xs font-medium">2 new files</span>
+                                </div>
+                                <div class="ml-7 space-y-2">
+                                    <div class="flex items-center gap-3 text-sm">
+                                        <span class="w-8 h-8 rounded bg-pink-100 text-pink-600 flex items-center justify-center font-bold text-xs">IG</span>
+                                        <span class="text-gray-600">instagram/2026-01-metrics.csv</span>
+                                        <span class="text-gray-400">62 posts</span>
+                                    </div>
+                                    <div class="flex items-center gap-3 text-sm">
+                                        <span class="w-8 h-8 rounded bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-xs">FB</span>
+                                        <span class="text-gray-600">facebook/2026-01-insights.csv</span>
+                                        <span class="text-gray-400">55 posts</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Client Group 3 - Up to date -->
+                            <div class="p-4 bg-gray-50">
+                                <div class="flex items-center gap-3">
+                                    <input type="checkbox" disabled class="w-4 h-4 text-gray-300 rounded border-gray-300">
+                                    <span class="font-medium text-gray-400">Castle Point Financial</span>
+                                    <span class="px-2 py-0.5 bg-gray-200 text-gray-500 rounded text-xs font-medium">Up to date</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6 border-t border-gray-100 flex justify-between items-center">
+                            <p class="text-sm text-gray-500">5 files from 2 clients ready to import</p>
+                            <button class="px-6 py-3 bg-socialife-blue text-white rounded-lg font-medium hover:bg-opacity-90 transition flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                                </svg>
+                                Sync Selected
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manual Upload Panel (hidden by default) -->
+                <div id="panel-manual" class="space-y-6 hidden">
+                    <!-- Client Selector -->
+                    <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                        <label class="block text-sm font-medium text-socialife-dark mb-2">Select Client</label>
+                        <select class="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white text-socialife-dark focus:outline-none focus:ring-2 focus:ring-socialife-blue">
+                            <option value="">Choose a client...</option>
+                            <option value="essex-sports">Essex Sports Club</option>
+                            <option value="bellas-bakery">Bella's Bakery</option>
+                            <option value="castle-point">Castle Point Financial</option>
+                            <option value="fresh-eats">Fresh Eats Co</option>
+                        </select>
+                    </div>
+
+                    <!-- Drop Zone -->
+                    <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+                        <div id="dropZone" class="drop-zone rounded-xl p-12 text-center cursor-pointer">
+                            <div class="w-16 h-16 rounded-full bg-socialife-blue/10 mx-auto mb-4 flex items-center justify-center">
+                                <svg class="w-8 h-8 text-socialife-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-semibold text-socialife-dark mb-2">Drop CSV files here</h3>
+                            <p class="text-gray-500 mb-4">or click to browse your computer</p>
+                            <p class="text-sm text-gray-400">Supports: Instagram, Facebook, TikTok, LinkedIn exports</p>
+                            <input type="file" id="fileInput" class="hidden" multiple accept=".csv,.xlsx">
+                        </div>
+                    </div>
+
+                    <!-- Uploaded Files -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-100">
+                        <div class="p-6 border-b border-gray-100">
+                            <h2 class="font-semibold text-socialife-dark">Files to Import</h2>
+                        </div>
+
+                        <div class="divide-y divide-gray-100">
+                            <!-- File 1 - Success -->
+                            <div class="p-4 flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-lg bg-pink-100 flex items-center justify-center">
+                                    <span class="text-pink-600 font-bold text-sm">IG</span>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-medium text-socialife-dark">instagram_insights_jan2026.csv</p>
+                                    <p class="text-sm text-gray-500">Detected: Instagram Post Insights • 45 posts</p>
+                                </div>
+                                <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm font-medium">Ready</span>
+                                <button class="text-gray-400 hover:text-gray-600">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!-- File 2 - Success -->
+                            <div class="p-4 flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center">
+                                    <span class="text-blue-600 font-bold text-sm">FB</span>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-medium text-socialife-dark">facebook_page_insights.csv</p>
+                                    <p class="text-sm text-gray-500">Detected: Facebook Page Insights • 38 posts</p>
+                                </div>
+                                <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm font-medium">Ready</span>
+                                <button class="text-gray-400 hover:text-gray-600">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!-- File 3 - Processing -->
+                            <div class="p-4 flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-lg bg-gray-800 flex items-center justify-center">
+                                    <span class="text-white font-bold text-sm">TT</span>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-medium text-socialife-dark">tiktok_analytics_export.csv</p>
+                                    <p class="text-sm text-gray-500">Analysing file format...</p>
+                                </div>
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm font-medium flex items-center gap-2">
+                                    <svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                    </svg>
+                                    Processing
+                                </span>
+                                <button class="text-gray-400 hover:text-gray-600">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="p-6 border-t border-gray-100 flex justify-between items-center">
+                            <p class="text-sm text-gray-500">3 files selected • 83 posts total</p>
+                            <button class="px-6 py-2 bg-socialife-blue text-white rounded-lg font-medium hover:bg-opacity-90 transition">
+                                Import All Data
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Help Panel -->
+            <div class="space-y-6">
+                <!-- Folder Structure Guide -->
+                <div id="help-folder" class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                    <h3 class="font-semibold text-socialife-dark mb-4">Folder Structure</h3>
+                    <p class="text-sm text-gray-600 mb-4">Organise your data folder like this:</p>
+                    <div class="bg-gray-50 rounded-lg p-4 font-mono text-sm text-gray-700">
+                        <div>SocialifeData/</div>
+                        <div class="ml-4">├── Essex Sports Club/</div>
+                        <div class="ml-8">├── instagram/</div>
+                        <div class="ml-12 text-gray-500">│   └── 2026-01-metrics.csv</div>
+                        <div class="ml-8">├── facebook/</div>
+                        <div class="ml-12 text-gray-500">│   └── 2026-01-insights.csv</div>
+                        <div class="ml-8">└── tiktok/</div>
+                        <div class="ml-12 text-gray-500">    └── 2026-01-analytics.csv</div>
+                        <div class="ml-4">├── Bella's Bakery/</div>
+                        <div class="ml-4 text-gray-400">└── ...</div>
+                    </div>
+                    <div class="mt-4 p-3 bg-socialife-blue/5 rounded-lg">
+                        <p class="text-sm text-socialife-dark"><strong>Tip:</strong> Client folder names must match exactly how they appear in the Clients page.</p>
+                    </div>
+                </div>
+
+                <!-- Quick Guide (for manual upload) -->
+                <div id="help-manual" class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hidden">
+                    <h3 class="font-semibold text-socialife-dark mb-4">How to Export Data</h3>
+
+                    <div class="space-y-4">
+                        <!-- Instagram -->
+                        <div class="p-4 bg-pink-50 rounded-lg">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="w-6 h-6 rounded bg-pink-500 text-white text-xs flex items-center justify-center font-bold">IG</span>
+                                <span class="font-medium text-socialife-dark">Instagram</span>
+                            </div>
+                            <ol class="text-sm text-gray-600 space-y-1 ml-8 list-decimal">
+                                <li>Go to Professional Dashboard</li>
+                                <li>Click "Insights"</li>
+                                <li>Select date range</li>
+                                <li>Click "Export" → CSV</li>
+                            </ol>
+                        </div>
+
+                        <!-- Facebook -->
+                        <div class="p-4 bg-blue-50 rounded-lg">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="w-6 h-6 rounded bg-blue-500 text-white text-xs flex items-center justify-center font-bold">FB</span>
+                                <span class="font-medium text-socialife-dark">Facebook</span>
+                            </div>
+                            <ol class="text-sm text-gray-600 space-y-1 ml-8 list-decimal">
+                                <li>Open Meta Business Suite</li>
+                                <li>Go to Insights</li>
+                                <li>Click "Export Data"</li>
+                                <li>Choose CSV format</li>
+                            </ol>
+                        </div>
+
+                        <!-- TikTok -->
+                        <div class="p-4 bg-gray-100 rounded-lg">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="w-6 h-6 rounded bg-gray-800 text-white text-xs flex items-center justify-center font-bold">TT</span>
+                                <span class="font-medium text-socialife-dark">TikTok</span>
+                            </div>
+                            <ol class="text-sm text-gray-600 space-y-1 ml-8 list-decimal">
+                                <li>Open TikTok Studio</li>
+                                <li>Go to Analytics</li>
+                                <li>Click "Download data"</li>
+                                <li>Select date range</li>
+                            </ol>
+                        </div>
+
+                        <!-- LinkedIn -->
+                        <div class="p-4 bg-sky-50 rounded-lg">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="w-6 h-6 rounded bg-sky-600 text-white text-xs flex items-center justify-center font-bold">LI</span>
+                                <span class="font-medium text-socialife-dark">LinkedIn</span>
+                            </div>
+                            <ol class="text-sm text-gray-600 space-y-1 ml-8 list-decimal">
+                                <li>Go to Page Admin view</li>
+                                <li>Click "Analytics"</li>
+                                <li>Select metric type</li>
+                                <li>Click "Export"</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <!-- End help-manual -->
+
+                <!-- Recent Imports -->
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                    <h3 class="font-semibold text-socialife-dark mb-4">Recent Imports</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between text-sm">
+                            <div>
+                                <p class="font-medium text-socialife-dark">Bella's Bakery</p>
+                                <p class="text-gray-500">28 Jan 2026</p>
+                            </div>
+                            <span class="text-green-500">✓</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <div>
+                                <p class="font-medium text-socialife-dark">Fresh Eats Co</p>
+                                <p class="text-gray-500">27 Jan 2026</p>
+                            </div>
+                            <span class="text-green-500">✓</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <div>
+                                <p class="font-medium text-socialife-dark">Castle Point Financial</p>
+                                <p class="text-gray-500">25 Jan 2026</p>
+                            </div>
+                            <span class="text-green-500">✓</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Status -->
+                <div class="bg-gradient-to-br from-socialife-blue to-cyan-600 rounded-xl p-6 text-white">
+                    <h3 class="font-semibold mb-2">Data Freshness</h3>
+                    <p class="text-sm text-white/80 mb-4">Last full import: 3 days ago</p>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm">
+                            <span>Clients up to date</span>
+                            <span class="font-medium">12/16</span>
+                        </div>
+                        <div class="w-full bg-white/20 rounded-full h-2">
+                            <div class="bg-white rounded-full h-2" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Tab switching
+        const tabFolder = document.getElementById('tab-folder');
+        const tabManual = document.getElementById('tab-manual');
+        const panelFolder = document.getElementById('panel-folder');
+        const panelManual = document.getElementById('panel-manual');
+        const helpFolder = document.getElementById('help-folder');
+        const helpManual = document.getElementById('help-manual');
+
+        function setActiveTab(tab) {
+            if (tab === 'folder') {
+                tabFolder.classList.add('text-socialife-blue', 'border-b-2', 'border-socialife-blue', 'bg-socialife-blue/5');
+                tabFolder.classList.remove('text-gray-500');
+                tabManual.classList.remove('text-socialife-blue', 'border-b-2', 'border-socialife-blue', 'bg-socialife-blue/5');
+                tabManual.classList.add('text-gray-500');
+                panelFolder.classList.remove('hidden');
+                panelManual.classList.add('hidden');
+                helpFolder.classList.remove('hidden');
+                helpManual.classList.add('hidden');
+            } else {
+                tabManual.classList.add('text-socialife-blue', 'border-b-2', 'border-socialife-blue', 'bg-socialife-blue/5');
+                tabManual.classList.remove('text-gray-500');
+                tabFolder.classList.remove('text-socialife-blue', 'border-b-2', 'border-socialife-blue', 'bg-socialife-blue/5');
+                tabFolder.classList.add('text-gray-500');
+                panelManual.classList.remove('hidden');
+                panelFolder.classList.add('hidden');
+                helpManual.classList.remove('hidden');
+                helpFolder.classList.add('hidden');
+            }
+        }
+
+        tabFolder.addEventListener('click', () => setActiveTab('folder'));
+        tabManual.addEventListener('click', () => setActiveTab('manual'));
+
+        // Data source selection
+        const sourceRadios = document.querySelectorAll('input[name="data-source"]');
+        const sourceLocal = document.getElementById('source-local');
+        const sourceCloud = document.getElementById('source-cloud');
+
+        sourceRadios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                if (e.target.value === 'local') {
+                    sourceLocal.classList.remove('hidden');
+                    sourceCloud.classList.add('hidden');
+                } else {
+                    sourceLocal.classList.add('hidden');
+                    sourceCloud.classList.remove('hidden');
+                }
+            });
+        });
+
+        // Simple drag and drop interaction
+        const dropZone = document.getElementById('dropZone');
+        const fileInput = document.getElementById('fileInput');
+
+        if (dropZone && fileInput) {
+            dropZone.addEventListener('click', () => fileInput.click());
+
+            dropZone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                dropZone.classList.add('dragover');
+            });
+
+            dropZone.addEventListener('dragleave', () => {
+                dropZone.classList.remove('dragover');
+            });
+
+            dropZone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                dropZone.classList.remove('dragover');
+                // Handle files
+            });
+        }
+    </script>
+</body>
+</html>

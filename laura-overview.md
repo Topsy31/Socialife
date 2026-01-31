@@ -1,7 +1,7 @@
 # Socialife Analytics Tool — Overview for Laura
 
 **Prepared:** 30 January 2026
-**Wireframes:** [View on GitHub](https://github.com/Topsy31/Socialife/tree/main/wireframe)
+**Wireframes:** [View Interactive Demo](https://topsy31.github.io/Socialife/wireframe/index.html)
 
 ---
 

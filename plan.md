@@ -52,8 +52,8 @@ Laura has reviewed the Metricool analysis and identified two areas of interest:
 
 **MVP Definition:**
 - All 16 clients working from day one
-- Analytics import and PDF report generation functional
-- Content calendar is secondary (nice-to-have for MVP)
+- Analytics import and report generation functional
+- Content calendar: **Airtable integration** (read existing calendars, overlay analytics insights) — elevated from "nice-to-have" based on Laura's feedback
 
 **Timeline:**
 - No hard deadline
@@ -79,17 +79,20 @@ Laura has reviewed the Metricool analysis and identified two areas of interest:
 - Auto-detect platform and configure appropriately
 - Minimise manual intervention required
 
-**Data & Compliance:**
+**Data & Compliance (Confirmed by Laura):**
 
 | Area | Status | Action |
 |------|--------|--------|
-| GDPR compliance | Unknown — need to verify | Ask Laura what her client contracts require |
-| Data retention | Match client contracts | Make retention period configurable per client |
-| Data deletion | May be required | Build "delete all client data" feature for GDPR requests |
+| GDPR compliance | No specific contractual requirement | Still build delete capability as best practice |
+| Data retention | As long as they're a client | No automatic purge; archive when client leaves |
+| Data deletion | No specific requirement in contracts | Include "delete all client data" as optional feature |
 
-**Existing Toolset:**
-- Current tools used by team: Unknown — need to clarify with Laura
-- Potential integrations to explore: Google Drive, OneDrive, Canva
+**Existing Toolset (Confirmed by Laura):**
+- **Google Workspace:** Gmail, Google Drive, Google Calendar
+- **Canva:** Design and content creation
+- **WhatsApp:** Team communication
+- **Airtable:** Content calendars for each client (established workflow)
+- Potential integrations: Google Drive (report export), **Airtable (content calendar sync — high priority)**
 
 ---
 
@@ -140,16 +143,26 @@ Laura has reviewed the Metricool analysis and identified two areas of interest:
 
 ---
 
-### Open Questions for Laura
+### Answered Questions from Laura
 
-These items need clarification before or during development:
+| Question | Laura's Answer | Impact on Build |
+|----------|---------------|-----------------|
+| Sample reports | Two PowerPoint reports provided (Intotum January, SCC November) | Use as design reference for PDF layout; note format is PPTX not PDF |
+| Data retention | As long as they're a client | No auto-purge needed; archive on contract end |
+| GDPR/data deletion | No specific contractual requirement | Build delete feature as best practice, not critical path |
+| Current tools | Google Workspace, Canva, WhatsApp, **Airtable** | Airtable integration is high priority for content calendar |
+| Metrics priority | 1. Views, 1. Engagement, 1. Reach/Impressions, 3. Follower growth, 4. Best performing posts | Views must be a first-class metric; dashboard should lead with Views, Engagement, Reach |
+| Wireframe feedback | "Looks great and very simple to navigate" — asked about Airtable integration for content calendar | Content calendar must either sync with Airtable or replicate its workflow |
 
-| Question | Why It Matters | Default if Unknown |
-|----------|----------------|-------------------|
-| Sample Metricool reports | Design reference for PDF layout | Design from scratch based on wireframes |
-| Client contract data requirements | Retention periods, deletion rights | 2-year default, configurable |
-| What other tools does the team use? | Integration opportunities | No integrations in MVP |
-| Specific metrics clients care about most? | Prioritise what appears in reports | Standard: followers, engagement, reach |
+### Remaining Open Questions
+
+| Question | Why It Matters | Suggested Next Step |
+|----------|----------------|---------------------|
+| Airtable base structure | Need to understand their current calendar schema (fields, views, statuses) to design integration | Laura offered to share a client calendar via Teams — **accept this offer** |
+| Report format preference | Sample reports are PowerPoint, not PDF — does Laura prefer PPTX or PDF output? | Ask Laura; PPTX generation is feasible but different from planned PDF |
+| Views metric definition | "Views" could mean video views, profile views, or page views depending on platform | Clarify which platforms/content types this applies to |
+| Airtable plan/tier | Free plan has 1,000 record limit and restricted API; need to know their current plan | Ask Laura what Airtable plan they're on |
+| Google Drive integration | Should generated reports auto-save to a shared Google Drive folder? | Confirm with Laura (she uses Google Workspace) |
 
 ---
 
@@ -230,6 +243,187 @@ Build a single integrated experience where analytics insights directly inform co
 - Client selector dropdown throughout UI
 - Each client has own brand guidelines, templates
 - Switch context without losing work
+
+---
+
+### Airtable Integration (Content Calendar)
+
+Laura's team already uses Airtable for client content calendars. This is an established workflow — the tool must either integrate with Airtable or provide equivalent functionality that justifies switching away from it.
+
+**Laura's exact feedback:** *"I wonder if there would be a way we could connect that to Airtable for their already planned calendar. If not, we could definitely transition into this if it could be used in the same way as Airtable. Happy to share a client calendar with you via Teams so you can see how we use it."*
+
+**Strategy Decision: Integrate, Don't Replace**
+
+Rather than rebuilding Airtable's functionality (which would be significant scope), the recommended approach is to **integrate with Airtable via its REST API** and treat Airtable as the content planning source of truth.
+
+**Why integrate rather than replace:**
+
+| Factor | Integrate with Airtable | Build our own calendar |
+|--------|------------------------|----------------------|
+| Team disruption | None — keep existing workflow | High — learn new tool |
+| Development effort | Moderate (API integration) | High (replicate Airtable features) |
+| Feature parity | Immediate (Airtable already works) | Would take significant development to match |
+| Collaboration | Airtable handles multi-user natively | Would need to solve separately |
+| Cost | Laura already pays for Airtable | No additional cost, but much more dev work |
+| Risk | Low — additive feature | High — replacing working system |
+
+**Airtable REST API Capabilities:**
+
+| Capability | Detail |
+|------------|--------|
+| Authentication | Personal Access Tokens (PATs) — API keys deprecated Feb 2024 |
+| Read records | List/get records from any table, with filtering and sorting |
+| Write records | Create, update, delete up to 10 records per request |
+| Rate limits | 5 requests per second per base |
+| Record limits | Free plan: 1,000 records per base; Pro plan: 50,000 |
+| Webhooks | Available on paid plans for real-time change notifications |
+| Base URL | `https://api.airtable.com/v0/{baseId}/{tableNameOrId}` |
+
+**Integration Architecture:**
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    SOCIALIFE ANALYTICS TOOL                       │
+│                                                                   │
+│  ┌─────────────────────┐    ┌──────────────────────────────┐    │
+│  │   ANALYTICS ENGINE  │    │   CONTENT CALENDAR VIEW      │    │
+│  │                     │    │                              │    │
+│  │ • CSV import        │    │ • Reads from Airtable API   │    │
+│  │ • Trend analysis    │───▶│ • Shows posts + status      │    │
+│  │ • Best times data   │    │ • Optimal times overlay     │    │
+│  │ • Top content types │    │ • AI suggestions sidebar    │    │
+│  └─────────────────────┘    └──────────────┬───────────────┘    │
+│                                             │                    │
+│                              Write back:    │                    │
+│                              AI suggestions,│                    │
+│                              optimal times  │                    │
+│                                             │                    │
+└─────────────────────────────────────────────┼────────────────────┘
+                                              │
+                                              ▼
+                               ┌──────────────────────────┐
+                               │       AIRTABLE           │
+                               │                          │
+                               │  Client Calendar Bases   │
+                               │  (source of truth for    │
+                               │   content planning)      │
+                               │                          │
+                               │  Laura's team continues  │
+                               │  to plan content here    │
+                               └──────────────────────────┘
+```
+
+**Integration Features (Two-Way via REST API):**
+
+| Feature | Direction | How It Works |
+|---------|-----------|-------------|
+| Display calendar | Read from Airtable | Fetch records, display in our calendar view with analytics overlay |
+| Post status tracking | Read from Airtable | Show Draft/Scheduled/Published status from Airtable fields |
+| Optimal posting times | Write to Airtable | Add "Suggested Time" field populated by analytics engine |
+| AI caption suggestions | Write to Airtable | Add "AI Suggestion" field that team can accept/reject |
+| Performance data | Write to Airtable | After publishing, write engagement metrics back to the post record |
+| Content insights | Read from Airtable | Analyse planned content types against historical performance |
+
+**Implementation Approach:**
+
+1. **Accept Laura's offer** — get access to a client Airtable calendar via Teams
+2. **Map the schema** — document fields, views, statuses, and relationships
+3. **Build read integration first** — display Airtable calendar data in our tool with analytics overlay
+4. **Add write-back features** — AI suggestions, optimal times, post-publish metrics
+5. **Test with Laura** — ensure it doesn't disrupt existing workflow
+
+**Airtable Configuration (Settings Page):**
+
+| Setting | Purpose |
+|---------|---------|
+| Personal Access Token | Authentication for API calls |
+| Base ID per client | Each client's Airtable base (or table within a shared base) |
+| Field mapping | Map Airtable field names to our data model |
+| Sync frequency | How often to pull updates (default: on page load + manual refresh) |
+| Write-back enabled | Toggle whether we write suggestions/metrics back to Airtable |
+
+**Airtable Provider Interface:**
+
+```typescript
+interface AirtableProvider {
+  // Configuration
+  configure(token: string, baseId: string): void;
+  testConnection(): Promise<boolean>;
+
+  // Read operations
+  getRecords(tableId: string, options?: {
+    filterByFormula?: string;
+    sort?: { field: string; direction: 'asc' | 'desc' }[];
+    maxRecords?: number;
+    view?: string;
+  }): Promise<AirtableRecord[]>;
+
+  getRecord(tableId: string, recordId: string): Promise<AirtableRecord>;
+
+  // Write operations
+  createRecords(tableId: string, records: Partial<AirtableRecord>[]): Promise<AirtableRecord[]>;
+  updateRecords(tableId: string, records: { id: string; fields: Record<string, any> }[]): Promise<AirtableRecord[]>;
+
+  // Schema discovery
+  getBaseSchema(baseId: string): Promise<AirtableSchema>;
+}
+
+interface AirtableRecord {
+  id: string;
+  fields: Record<string, any>;
+  createdTime: string;
+}
+
+// Field mapping configuration per client
+interface AirtableFieldMapping {
+  clientId: string;
+  baseId: string;
+  tableId: string;
+  fields: {
+    postDate: string;        // e.g., "Scheduled Date"
+    platform: string;        // e.g., "Platform"
+    caption: string;         // e.g., "Caption"
+    status: string;          // e.g., "Status"
+    contentType: string;     // e.g., "Content Type"
+    hashtags?: string;       // e.g., "Hashtags"
+    aiSuggestion?: string;   // e.g., "AI Suggestion" (write-back)
+    optimalTime?: string;    // e.g., "Best Time" (write-back)
+    actualReach?: string;    // e.g., "Reach" (write-back post-publish)
+    actualEngagement?: string; // e.g., "Engagement" (write-back)
+  };
+  statusMapping: {
+    draft: string;           // e.g., "Draft"
+    pendingApproval: string; // e.g., "Pending"
+    scheduled: string;       // e.g., "Scheduled"
+    published: string;       // e.g., "Published"
+  };
+}
+```
+
+**Airtable Free Plan Constraints:**
+
+| Limit | Free Plan | Pro Plan (£16/user/month) |
+|-------|-----------|---------------------------|
+| Records per base | 1,000 | 50,000 |
+| Attachment storage | 1 GB | 20 GB |
+| Revision history | 2 weeks | 1 year |
+| API rate limit | 5 req/sec | 5 req/sec |
+| Automations | 100 runs/month | 25,000 runs/month |
+| Sync integrations | Limited | Full |
+
+**Important:** If Laura is on the free plan with 16 clients, each client having ~30 posts/month = 480 records/month. The 1,000 record limit could be hit within 2 months unless they archive old records. Need to confirm Laura's Airtable plan.
+
+**Fallback: Built-In Calendar (If Airtable Integration Not Feasible)**
+
+If Airtable integration proves impractical (e.g., Laura is on free plan with API limits, or the schema is too complex), the content calendar in our tool should mirror Airtable's UX:
+
+- Grid view (spreadsheet-like, Airtable's default)
+- Calendar view (month/week)
+- Kanban view (by status: Draft → Pending → Scheduled → Published)
+- Filtering by client, platform, status
+- Collaborative editing (would require cloud storage — Stage 3+)
+
+This is significantly more development work and should only be pursued if Airtable integration is ruled out.
 
 **Client Management:**
 - Full client lifecycle: onboard → active → archived
@@ -726,7 +920,7 @@ Add owned click tracking to measure campaign effectiveness.
 |-------------|--------|
 | Client volume | 16+ clients |
 | Platforms | Instagram, Facebook, TikTok, LinkedIn |
-| Key metrics | Engagement (likes/comments/shares), reach/impressions, follower growth |
+| Key metrics | **Views (top priority)**, Engagement (likes/comments/shares), Reach/Impressions, Follower growth, Best performing posts |
 | Report frequency | Monthly |
 | White-label branding | Essential |
 | Data collection | Automation preferred, but accepts some manual work |
@@ -739,6 +933,11 @@ Add owned click tracking to measure campaign effectiveness.
 | Data storage preference | Local (on Laura's machine) |
 | Team access model | Laura manages tool, shares reports with team via PDF/email |
 | Application type | Local web app (double-click shortcut, opens in browser) |
+| Data retention | As long as the client remains active (no fixed period) |
+| GDPR/data deletion | No specific contractual requirement |
+| Current toolset | Google Workspace (Gmail, Drive, Calendar), Canva, WhatsApp, **Airtable (content calendars)** |
+| Content calendar | Team already uses Airtable for client content calendars — integration or feature parity required |
+| Sample reports | Two provided: Intotum January Report, SCC November Report (PowerPoint format) |
 
 ---
 
@@ -761,20 +960,31 @@ Add owned click tracking to measure campaign effectiveness.
 - [x] Create detailed technical specification (this document)
 - [x] Design wireframes for all key screens
 - [x] Define ICE framework (Intent, Constraints, Expectations)
+- [x] Request sample reports from Laura — **received 2 PowerPoint reports** (Intotum January, SCC November)
+- [x] Clarify data retention requirements — **as long as they're a client**
+- [x] Confirm Laura's current toolset — **Google Workspace, Canva, WhatsApp, Airtable**
+- [x] Confirm metric priorities — **Views (1), Engagement (1), Reach (1), Follower growth (3), Best posts (4)**
+- [x] Get wireframe feedback — **positive; Airtable integration requested for content calendar**
 
-**Before Development:**
-- [ ] Request sample Metricool reports from Laura (design reference)
-- [ ] Clarify data retention requirements from client contracts
-- [ ] Confirm Laura's current toolset (Google Workspace, Microsoft 365, etc.)
-- [ ] Get sample CSV exports from each platform to test parsers
+**Immediate Next Steps (Pre-Development):**
+- [ ] **Schedule Teams call with Laura** (she's requested this)
+- [ ] **Accept Airtable calendar share** — Laura offered to share a client calendar via Teams
+- [ ] **Clarify manual data export process** — Laura asked "when you say downloaded manually, what do you mean and how will this part work?"
+- [ ] **Review sample PPTX reports** — study layout, metrics, and branding used in Intotum and SCC reports
+- [ ] **Confirm report output format** — PDF (as planned) or PowerPoint (matching current reports)?
+- [ ] **Clarify "Views" metric** — which platforms/content types does this refer to?
+- [ ] **Check Laura's Airtable plan** — free plan has 1,000 record limit which affects integration approach
+- [ ] **Get sample CSV exports** from each platform to test parsers
+- [ ] **Discuss pricing/compensation** — Laura has offered to pay for services
 
 **Development (MVP):**
 - [ ] Set up project structure (React + Node.js + SQLite)
 - [ ] Build CSV parsers for each platform
 - [ ] Implement client management (CRUD + archive)
-- [ ] Build analytics dashboard
-- [ ] Create PDF report generator with white-labelling
+- [ ] Build analytics dashboard (lead with Views, Engagement, Reach)
+- [ ] Create report generator with white-labelling (PDF or PPTX — TBC)
 - [ ] Build data import (folder sync + manual upload)
+- [ ] **Build Airtable integration** (read calendar data, write-back suggestions/metrics)
 - [ ] Create one-click installers for Windows and Mac
 
 **Handover:**
@@ -1408,6 +1618,27 @@ For social media API connections (when implemented):
 3. **Tokens** stored encrypted in SQLite, never logged
 4. **Refresh** handled automatically by backend before expiry
 5. **Revocation** clears tokens and requires reconnection
+
+---
+
+## Laura's Response Summary (February 2026)
+
+Laura returned the overview document with annotated answers and two sample reports. Key points from her email:
+
+1. **Positive reception** — wireframe described as "amazing"
+2. **Wants a Teams call** to discuss properly
+3. **Willing to pay** — "more than happy to pay for your services/compensate you for your time"
+4. **Needs clarification on manual exports** — asked "when you say downloaded manually, what do you mean and how will this part work?" (This refers to the CSV export process from each platform — needs a visual walkthrough)
+5. **Provided 2 sample reports** — PowerPoint format (Intotum January, SCC November)
+6. **Airtable is key** — team already uses Airtable for content calendars; wants integration or equivalent functionality
+7. **Metrics priority confirmed** — Views is top priority (added as custom metric), alongside Engagement and Reach/Impressions
+
+**Action items arising from Laura's response:**
+- Schedule Teams call
+- Prepare visual guide showing how CSV exports work from each platform (screenshots)
+- Review the two PPTX reports to inform report design
+- Get access to an Airtable client calendar to map the schema
+- Discuss pricing structure
 
 ---
 

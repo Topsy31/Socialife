@@ -1,0 +1,2138 @@
+{
+  "id": "essex-sports-club",
+  "name": "Essex Sports Club",
+  "industry": "Sports & Fitness",
+  "status": "active",
+  "contact": {
+    "name": "John Smith",
+    "email": "john@essexsports.co.uk"
+  },
+  "branding": {
+    "logo": null,
+    "primaryColour": "#10b981",
+    "secondaryColour": "#064e3b",
+    "reportFooter": "Prepared by Socialife Management | socialifemanagement.com"
+  },
+  "website": "www.essexsportsclub.co.uk",
+  "contractStart": "2025-06-01",
+  "accounts": [
+    {
+      "platform": "instagram",
+      "handle": "@essexsportsclub"
+    },
+    {
+      "platform": "facebook",
+      "handle": "EssexSportsClub"
+    },
+    {
+      "platform": "tiktok",
+      "handle": "@essexsports"
+    }
+  ],
+  "metrics": {
+    "daily": [
+      {
+        "date": "2026-01-01",
+        "platform": "instagram",
+        "followers": 12478,
+        "followersChange": 28,
+        "reach": 1984,
+        "impressions": 4007,
+        "engagements": 64,
+        "views": 4572,
+        "engagementRate": 3.23
+      },
+      {
+        "date": "2026-01-02",
+        "platform": "instagram",
+        "followers": 12507,
+        "followersChange": 29,
+        "reach": 4203,
+        "impressions": 7857,
+        "engagements": 174,
+        "views": 5231,
+        "engagementRate": 4.14
+      },
+      {
+        "date": "2026-01-03",
+        "platform": "instagram",
+        "followers": 12524,
+        "followersChange": 17,
+        "reach": 4177,
+        "impressions": 7607,
+        "engagements": 131,
+        "views": 9084,
+        "engagementRate": 3.14
+      },
+      {
+        "date": "2026-01-04",
+        "platform": "instagram",
+        "followers": 12550,
+        "followersChange": 26,
+        "reach": 3229,
+        "impressions": 7334,
+        "engagements": 190,
+        "views": 3906,
+        "engagementRate": 5.88
+      },
+      {
+        "date": "2026-01-05",
+        "platform": "instagram",
+        "followers": 12582,
+        "followersChange": 32,
+        "reach": 3707,
+        "impressions": 7681,
+        "engagements": 109,
+        "views": 9770,
+        "engagementRate": 2.94
+      },
+      {
+        "date": "2026-01-06",
+        "platform": "instagram",
+        "followers": 12603,
+        "followersChange": 21,
+        "reach": 2157,
+        "impressions": 4049,
+        "engagements": 130,
+        "views": 4541,
+        "engagementRate": 6.03
+      },
+      {
+        "date": "2026-01-07",
+        "platform": "instagram",
+        "followers": 12635,
+        "followersChange": 32,
+        "reach": 3788,
+        "impressions": 8443,
+        "engagements": 251,
+        "views": 6696,
+        "engagementRate": 6.63
+      },
+      {
+        "date": "2026-01-08",
+        "platform": "instagram",
+        "followers": 12661,
+        "followersChange": 26,
+        "reach": 4043,
+        "impressions": 9277,
+        "engagements": 247,
+        "views": 8352,
+        "engagementRate": 6.11
+      },
+      {
+        "date": "2026-01-09",
+        "platform": "instagram",
+        "followers": 12691,
+        "followersChange": 30,
+        "reach": 2037,
+        "impressions": 4037,
+        "engagements": 72,
+        "views": 2688,
+        "engagementRate": 3.53
+      },
+      {
+        "date": "2026-01-10",
+        "platform": "instagram",
+        "followers": 12709,
+        "followersChange": 18,
+        "reach": 2832,
+        "impressions": 5727,
+        "engagements": 144,
+        "views": 4948,
+        "engagementRate": 5.08
+      },
+      {
+        "date": "2026-01-11",
+        "platform": "instagram",
+        "followers": 12731,
+        "followersChange": 22,
+        "reach": 3193,
+        "impressions": 6429,
+        "engagements": 206,
+        "views": 6935,
+        "engagementRate": 6.45
+      },
+      {
+        "date": "2026-01-12",
+        "platform": "instagram",
+        "followers": 12759,
+        "followersChange": 28,
+        "reach": 2358,
+        "impressions": 5619,
+        "engagements": 70,
+        "views": 4171,
+        "engagementRate": 2.97
+      },
+      {
+        "date": "2026-01-13",
+        "platform": "instagram",
+        "followers": 12797,
+        "followersChange": 38,
+        "reach": 3558,
+        "impressions": 7989,
+        "engagements": 189,
+        "views": 8767,
+        "engagementRate": 5.31
+      },
+      {
+        "date": "2026-01-14",
+        "platform": "instagram",
+        "followers": 12829,
+        "followersChange": 32,
+        "reach": 2506,
+        "impressions": 4575,
+        "engagements": 91,
+        "views": 4013,
+        "engagementRate": 3.63
+      },
+      {
+        "date": "2026-01-15",
+        "platform": "instagram",
+        "followers": 12847,
+        "followersChange": 18,
+        "reach": 4333,
+        "impressions": 10837,
+        "engagements": 158,
+        "views": 9459,
+        "engagementRate": 3.65
+      },
+      {
+        "date": "2026-01-16",
+        "platform": "instagram",
+        "followers": 12870,
+        "followersChange": 23,
+        "reach": 4261,
+        "impressions": 9233,
+        "engagements": 146,
+        "views": 6689,
+        "engagementRate": 3.43
+      },
+      {
+        "date": "2026-01-17",
+        "platform": "instagram",
+        "followers": 12897,
+        "followersChange": 27,
+        "reach": 3370,
+        "impressions": 7642,
+        "engagements": 211,
+        "views": 6062,
+        "engagementRate": 6.26
+      },
+      {
+        "date": "2026-01-18",
+        "platform": "instagram",
+        "followers": 12915,
+        "followersChange": 18,
+        "reach": 5815,
+        "impressions": 12837,
+        "engagements": 154,
+        "views": 7388,
+        "engagementRate": 2.65
+      },
+      {
+        "date": "2026-01-19",
+        "platform": "instagram",
+        "followers": 12930,
+        "followersChange": 15,
+        "reach": 3526,
+        "impressions": 8581,
+        "engagements": 146,
+        "views": 4567,
+        "engagementRate": 4.14
+      },
+      {
+        "date": "2026-01-20",
+        "platform": "instagram",
+        "followers": 12952,
+        "followersChange": 22,
+        "reach": 4470,
+        "impressions": 9938,
+        "engagements": 295,
+        "views": 11135,
+        "engagementRate": 6.6
+      },
+      {
+        "date": "2026-01-21",
+        "platform": "instagram",
+        "followers": 12965,
+        "followersChange": 13,
+        "reach": 3765,
+        "impressions": 8830,
+        "engagements": 175,
+        "views": 6024,
+        "engagementRate": 4.65
+      },
+      {
+        "date": "2026-01-22",
+        "platform": "instagram",
+        "followers": 12994,
+        "followersChange": 29,
+        "reach": 2205,
+        "impressions": 4735,
+        "engagements": 94,
+        "views": 5800,
+        "engagementRate": 4.26
+      },
+      {
+        "date": "2026-01-23",
+        "platform": "instagram",
+        "followers": 13029,
+        "followersChange": 35,
+        "reach": 2594,
+        "impressions": 5708,
+        "engagements": 79,
+        "views": 6663,
+        "engagementRate": 3.05
+      },
+      {
+        "date": "2026-01-24",
+        "platform": "instagram",
+        "followers": 13064,
+        "followersChange": 35,
+        "reach": 3489,
+        "impressions": 8063,
+        "engagements": 174,
+        "views": 4986,
+        "engagementRate": 4.99
+      },
+      {
+        "date": "2026-01-25",
+        "platform": "instagram",
+        "followers": 13096,
+        "followersChange": 32,
+        "reach": 4291,
+        "impressions": 10396,
+        "engagements": 198,
+        "views": 5152,
+        "engagementRate": 4.61
+      },
+      {
+        "date": "2026-01-26",
+        "platform": "instagram",
+        "followers": 13117,
+        "followersChange": 21,
+        "reach": 1969,
+        "impressions": 5007,
+        "engagements": 122,
+        "views": 4819,
+        "engagementRate": 6.2
+      },
+      {
+        "date": "2026-01-27",
+        "platform": "instagram",
+        "followers": 13138,
+        "followersChange": 21,
+        "reach": 2068,
+        "impressions": 5174,
+        "engagements": 134,
+        "views": 2747,
+        "engagementRate": 6.48
+      },
+      {
+        "date": "2026-01-28",
+        "platform": "instagram",
+        "followers": 13163,
+        "followersChange": 25,
+        "reach": 2097,
+        "impressions": 5050,
+        "engagements": 119,
+        "views": 2920,
+        "engagementRate": 5.67
+      },
+      {
+        "date": "2026-01-29",
+        "platform": "instagram",
+        "followers": 13188,
+        "followersChange": 25,
+        "reach": 3327,
+        "impressions": 6694,
+        "engagements": 205,
+        "views": 6104,
+        "engagementRate": 6.16
+      },
+      {
+        "date": "2026-01-30",
+        "platform": "instagram",
+        "followers": 13206,
+        "followersChange": 18,
+        "reach": 3300,
+        "impressions": 7867,
+        "engagements": 104,
+        "views": 5502,
+        "engagementRate": 3.15
+      },
+      {
+        "date": "2026-01-31",
+        "platform": "instagram",
+        "followers": 13245,
+        "followersChange": 39,
+        "reach": 4658,
+        "impressions": 10016,
+        "engagements": 213,
+        "views": 6435,
+        "engagementRate": 4.57
+      },
+      {
+        "date": "2026-01-01",
+        "platform": "facebook",
+        "followers": 8926,
+        "followersChange": 6,
+        "reach": 1566,
+        "impressions": 3555,
+        "engagements": 28,
+        "views": 2396,
+        "engagementRate": 1.79
+      },
+      {
+        "date": "2026-01-02",
+        "platform": "facebook",
+        "followers": 8931,
+        "followersChange": 5,
+        "reach": 1988,
+        "impressions": 3942,
+        "engagements": 69,
+        "views": 4949,
+        "engagementRate": 3.47
+      },
+      {
+        "date": "2026-01-03",
+        "platform": "facebook",
+        "followers": 8936,
+        "followersChange": 5,
+        "reach": 1849,
+        "impressions": 4317,
+        "engagements": 33,
+        "views": 2585,
+        "engagementRate": 1.78
+      },
+      {
+        "date": "2026-01-04",
+        "platform": "facebook",
+        "followers": 8948,
+        "followersChange": 12,
+        "reach": 2472,
+        "impressions": 5384,
+        "engagements": 79,
+        "views": 5960,
+        "engagementRate": 3.2
+      },
+      {
+        "date": "2026-01-05",
+        "platform": "facebook",
+        "followers": 8954,
+        "followersChange": 6,
+        "reach": 1219,
+        "impressions": 2614,
+        "engagements": 28,
+        "views": 2316,
+        "engagementRate": 2.3
+      },
+      {
+        "date": "2026-01-06",
+        "platform": "facebook",
+        "followers": 8965,
+        "followersChange": 11,
+        "reach": 2049,
+        "impressions": 5301,
+        "engagements": 30,
+        "views": 3696,
+        "engagementRate": 1.46
+      },
+      {
+        "date": "2026-01-07",
+        "platform": "facebook",
+        "followers": 8972,
+        "followersChange": 7,
+        "reach": 2320,
+        "impressions": 4637,
+        "engagements": 40,
+        "views": 4345,
+        "engagementRate": 1.72
+      },
+      {
+        "date": "2026-01-08",
+        "platform": "facebook",
+        "followers": 8980,
+        "followersChange": 8,
+        "reach": 1481,
+        "impressions": 2961,
+        "engagements": 52,
+        "views": 2761,
+        "engagementRate": 3.51
+      },
+      {
+        "date": "2026-01-09",
+        "platform": "facebook",
+        "followers": 8992,
+        "followersChange": 12,
+        "reach": 1872,
+        "impressions": 3445,
+        "engagements": 70,
+        "views": 4593,
+        "engagementRate": 3.74
+      },
+      {
+        "date": "2026-01-10",
+        "platform": "facebook",
+        "followers": 9005,
+        "followersChange": 13,
+        "reach": 3138,
+        "impressions": 7778,
+        "engagements": 52,
+        "views": 6051,
+        "engagementRate": 1.66
+      },
+      {
+        "date": "2026-01-11",
+        "platform": "facebook",
+        "followers": 9011,
+        "followersChange": 6,
+        "reach": 2154,
+        "impressions": 3978,
+        "engagements": 47,
+        "views": 5768,
+        "engagementRate": 2.18
+      },
+      {
+        "date": "2026-01-12",
+        "platform": "facebook",
+        "followers": 9017,
+        "followersChange": 6,
+        "reach": 2209,
+        "impressions": 4780,
+        "engagements": 50,
+        "views": 5822,
+        "engagementRate": 2.26
+      },
+      {
+        "date": "2026-01-13",
+        "platform": "facebook",
+        "followers": 9030,
+        "followersChange": 13,
+        "reach": 1880,
+        "impressions": 4464,
+        "engagements": 30,
+        "views": 3092,
+        "engagementRate": 1.6
+      },
+      {
+        "date": "2026-01-14",
+        "platform": "facebook",
+        "followers": 9043,
+        "followersChange": 13,
+        "reach": 1914,
+        "impressions": 4275,
+        "engagements": 59,
+        "views": 2460,
+        "engagementRate": 3.08
+      },
+      {
+        "date": "2026-01-15",
+        "platform": "facebook",
+        "followers": 9052,
+        "followersChange": 9,
+        "reach": 1804,
+        "impressions": 4477,
+        "engagements": 29,
+        "views": 4764,
+        "engagementRate": 1.61
+      },
+      {
+        "date": "2026-01-16",
+        "platform": "facebook",
+        "followers": 9057,
+        "followersChange": 5,
+        "reach": 1347,
+        "impressions": 3065,
+        "engagements": 39,
+        "views": 2091,
+        "engagementRate": 2.9
+      },
+      {
+        "date": "2026-01-17",
+        "platform": "facebook",
+        "followers": 9062,
+        "followersChange": 5,
+        "reach": 3070,
+        "impressions": 6130,
+        "engagements": 84,
+        "views": 6536,
+        "engagementRate": 2.74
+      },
+      {
+        "date": "2026-01-18",
+        "platform": "facebook",
+        "followers": 9070,
+        "followersChange": 8,
+        "reach": 2496,
+        "impressions": 5536,
+        "engagements": 89,
+        "views": 3759,
+        "engagementRate": 3.57
+      },
+      {
+        "date": "2026-01-19",
+        "platform": "facebook",
+        "followers": 9081,
+        "followersChange": 11,
+        "reach": 1423,
+        "impressions": 3011,
+        "engagements": 41,
+        "views": 2347,
+        "engagementRate": 2.88
+      },
+      {
+        "date": "2026-01-20",
+        "platform": "facebook",
+        "followers": 9088,
+        "followersChange": 7,
+        "reach": 2162,
+        "impressions": 4017,
+        "engagements": 51,
+        "views": 5832,
+        "engagementRate": 2.36
+      },
+      {
+        "date": "2026-01-21",
+        "platform": "facebook",
+        "followers": 9101,
+        "followersChange": 13,
+        "reach": 1185,
+        "impressions": 2335,
+        "engagements": 22,
+        "views": 3080,
+        "engagementRate": 1.86
+      },
+      {
+        "date": "2026-01-22",
+        "platform": "facebook",
+        "followers": 9113,
+        "followersChange": 12,
+        "reach": 2346,
+        "impressions": 4916,
+        "engagements": 38,
+        "views": 5749,
+        "engagementRate": 1.62
+      },
+      {
+        "date": "2026-01-23",
+        "platform": "facebook",
+        "followers": 9123,
+        "followersChange": 10,
+        "reach": 1960,
+        "impressions": 5075,
+        "engagements": 56,
+        "views": 2374,
+        "engagementRate": 2.86
+      },
+      {
+        "date": "2026-01-24",
+        "platform": "facebook",
+        "followers": 9135,
+        "followersChange": 12,
+        "reach": 1964,
+        "impressions": 4577,
+        "engagements": 70,
+        "views": 2752,
+        "engagementRate": 3.56
+      },
+      {
+        "date": "2026-01-25",
+        "platform": "facebook",
+        "followers": 9140,
+        "followersChange": 5,
+        "reach": 1604,
+        "impressions": 3597,
+        "engagements": 30,
+        "views": 3380,
+        "engagementRate": 1.87
+      },
+      {
+        "date": "2026-01-26",
+        "platform": "facebook",
+        "followers": 9151,
+        "followersChange": 11,
+        "reach": 1373,
+        "impressions": 3168,
+        "engagements": 26,
+        "views": 2653,
+        "engagementRate": 1.89
+      },
+      {
+        "date": "2026-01-27",
+        "platform": "facebook",
+        "followers": 9163,
+        "followersChange": 12,
+        "reach": 2298,
+        "impressions": 4306,
+        "engagements": 53,
+        "views": 3711,
+        "engagementRate": 2.31
+      },
+      {
+        "date": "2026-01-28",
+        "platform": "facebook",
+        "followers": 9167,
+        "followersChange": 4,
+        "reach": 2190,
+        "impressions": 5058,
+        "engagements": 41,
+        "views": 5062,
+        "engagementRate": 1.87
+      },
+      {
+        "date": "2026-01-29",
+        "platform": "facebook",
+        "followers": 9176,
+        "followersChange": 9,
+        "reach": 1695,
+        "impressions": 3064,
+        "engagements": 24,
+        "views": 4279,
+        "engagementRate": 1.42
+      },
+      {
+        "date": "2026-01-30",
+        "platform": "facebook",
+        "followers": 9188,
+        "followersChange": 12,
+        "reach": 1865,
+        "impressions": 4602,
+        "engagements": 50,
+        "views": 2652,
+        "engagementRate": 2.68
+      },
+      {
+        "date": "2026-01-31",
+        "platform": "facebook",
+        "followers": 9193,
+        "followersChange": 5,
+        "reach": 1981,
+        "impressions": 4990,
+        "engagements": 64,
+        "views": 4934,
+        "engagementRate": 3.23
+      },
+      {
+        "date": "2026-01-01",
+        "platform": "tiktok",
+        "followers": 4229,
+        "followersChange": 29,
+        "reach": 4224,
+        "impressions": 8446,
+        "engagements": 89,
+        "views": 10011,
+        "engagementRate": 2.11
+      },
+      {
+        "date": "2026-01-02",
+        "platform": "tiktok",
+        "followers": 4258,
+        "followersChange": 29,
+        "reach": 5088,
+        "impressions": 11684,
+        "engagements": 116,
+        "views": 13202,
+        "engagementRate": 2.28
+      },
+      {
+        "date": "2026-01-03",
+        "platform": "tiktok",
+        "followers": 4287,
+        "followersChange": 29,
+        "reach": 9873,
+        "impressions": 24175,
+        "engagements": 477,
+        "views": 12214,
+        "engagementRate": 4.83
+      },
+      {
+        "date": "2026-01-04",
+        "platform": "tiktok",
+        "followers": 4313,
+        "followersChange": 26,
+        "reach": 6190,
+        "impressions": 15751,
+        "engagements": 282,
+        "views": 15450,
+        "engagementRate": 4.56
+      },
+      {
+        "date": "2026-01-05",
+        "platform": "tiktok",
+        "followers": 4341,
+        "followersChange": 28,
+        "reach": 4473,
+        "impressions": 10868,
+        "engagements": 95,
+        "views": 11219,
+        "engagementRate": 2.12
+      },
+      {
+        "date": "2026-01-06",
+        "platform": "tiktok",
+        "followers": 4370,
+        "followersChange": 29,
+        "reach": 4278,
+        "impressions": 10495,
+        "engagements": 143,
+        "views": 7092,
+        "engagementRate": 3.34
+      },
+      {
+        "date": "2026-01-07",
+        "platform": "tiktok",
+        "followers": 4398,
+        "followersChange": 28,
+        "reach": 4301,
+        "impressions": 7823,
+        "engagements": 104,
+        "views": 7278,
+        "engagementRate": 2.42
+      },
+      {
+        "date": "2026-01-08",
+        "platform": "tiktok",
+        "followers": 4428,
+        "followersChange": 30,
+        "reach": 7554,
+        "impressions": 15284,
+        "engagements": 301,
+        "views": 13593,
+        "engagementRate": 3.98
+      },
+      {
+        "date": "2026-01-09",
+        "platform": "tiktok",
+        "followers": 4460,
+        "followersChange": 32,
+        "reach": 5659,
+        "impressions": 14438,
+        "engagements": 121,
+        "views": 15028,
+        "engagementRate": 2.14
+      },
+      {
+        "date": "2026-01-10",
+        "platform": "tiktok",
+        "followers": 4475,
+        "followersChange": 15,
+        "reach": 9795,
+        "impressions": 19711,
+        "engagements": 208,
+        "views": 18138,
+        "engagementRate": 2.12
+      },
+      {
+        "date": "2026-01-11",
+        "platform": "tiktok",
+        "followers": 4502,
+        "followersChange": 27,
+        "reach": 6084,
+        "impressions": 13901,
+        "engagements": 215,
+        "views": 10816,
+        "engagementRate": 3.53
+      },
+      {
+        "date": "2026-01-12",
+        "platform": "tiktok",
+        "followers": 4526,
+        "followersChange": 24,
+        "reach": 4420,
+        "impressions": 10462,
+        "engagements": 77,
+        "views": 11440,
+        "engagementRate": 1.74
+      },
+      {
+        "date": "2026-01-13",
+        "platform": "tiktok",
+        "followers": 4549,
+        "followersChange": 23,
+        "reach": 6465,
+        "impressions": 15474,
+        "engagements": 264,
+        "views": 11290,
+        "engagementRate": 4.08
+      },
+      {
+        "date": "2026-01-14",
+        "platform": "tiktok",
+        "followers": 4561,
+        "followersChange": 12,
+        "reach": 6222,
+        "impressions": 12843,
+        "engagements": 177,
+        "views": 15380,
+        "engagementRate": 2.84
+      },
+      {
+        "date": "2026-01-15",
+        "platform": "tiktok",
+        "followers": 4588,
+        "followersChange": 27,
+        "reach": 4621,
+        "impressions": 9461,
+        "engagements": 146,
+        "views": 8334,
+        "engagementRate": 3.16
+      },
+      {
+        "date": "2026-01-16",
+        "platform": "tiktok",
+        "followers": 4606,
+        "followersChange": 18,
+        "reach": 3860,
+        "impressions": 8246,
+        "engagements": 194,
+        "views": 8553,
+        "engagementRate": 5.03
+      },
+      {
+        "date": "2026-01-17",
+        "platform": "tiktok",
+        "followers": 4638,
+        "followersChange": 32,
+        "reach": 7810,
+        "impressions": 15938,
+        "engagements": 286,
+        "views": 9376,
+        "engagementRate": 3.66
+      },
+      {
+        "date": "2026-01-18",
+        "platform": "tiktok",
+        "followers": 4656,
+        "followersChange": 18,
+        "reach": 6748,
+        "impressions": 15277,
+        "engagements": 272,
+        "views": 12804,
+        "engagementRate": 4.03
+      },
+      {
+        "date": "2026-01-19",
+        "platform": "tiktok",
+        "followers": 4677,
+        "followersChange": 21,
+        "reach": 4240,
+        "impressions": 9237,
+        "engagements": 207,
+        "views": 10150,
+        "engagementRate": 4.88
+      },
+      {
+        "date": "2026-01-20",
+        "platform": "tiktok",
+        "followers": 4692,
+        "followersChange": 15,
+        "reach": 3673,
+        "impressions": 8126,
+        "engagements": 145,
+        "views": 6254,
+        "engagementRate": 3.95
+      },
+      {
+        "date": "2026-01-21",
+        "platform": "tiktok",
+        "followers": 4722,
+        "followersChange": 30,
+        "reach": 6605,
+        "impressions": 15444,
+        "engagements": 167,
+        "views": 9898,
+        "engagementRate": 2.53
+      },
+      {
+        "date": "2026-01-22",
+        "platform": "tiktok",
+        "followers": 4734,
+        "followersChange": 12,
+        "reach": 4377,
+        "impressions": 9542,
+        "engagements": 206,
+        "views": 5730,
+        "engagementRate": 4.71
+      },
+      {
+        "date": "2026-01-23",
+        "platform": "tiktok",
+        "followers": 4755,
+        "followersChange": 21,
+        "reach": 6070,
+        "impressions": 11870,
+        "engagements": 254,
+        "views": 11785,
+        "engagementRate": 4.18
+      },
+      {
+        "date": "2026-01-24",
+        "platform": "tiktok",
+        "followers": 4772,
+        "followersChange": 17,
+        "reach": 8042,
+        "impressions": 14511,
+        "engagements": 352,
+        "views": 18939,
+        "engagementRate": 4.38
+      },
+      {
+        "date": "2026-01-25",
+        "platform": "tiktok",
+        "followers": 4786,
+        "followersChange": 14,
+        "reach": 6721,
+        "impressions": 13043,
+        "engagements": 342,
+        "views": 13286,
+        "engagementRate": 5.09
+      },
+      {
+        "date": "2026-01-26",
+        "platform": "tiktok",
+        "followers": 4799,
+        "followersChange": 13,
+        "reach": 4396,
+        "impressions": 10896,
+        "engagements": 147,
+        "views": 10559,
+        "engagementRate": 3.34
+      },
+      {
+        "date": "2026-01-27",
+        "platform": "tiktok",
+        "followers": 4827,
+        "followersChange": 28,
+        "reach": 7646,
+        "impressions": 17405,
+        "engagements": 388,
+        "views": 19398,
+        "engagementRate": 5.07
+      },
+      {
+        "date": "2026-01-28",
+        "platform": "tiktok",
+        "followers": 4853,
+        "followersChange": 26,
+        "reach": 6464,
+        "impressions": 14245,
+        "engagements": 301,
+        "views": 13068,
+        "engagementRate": 4.66
+      },
+      {
+        "date": "2026-01-29",
+        "platform": "tiktok",
+        "followers": 4886,
+        "followersChange": 33,
+        "reach": 6572,
+        "impressions": 14325,
+        "engagements": 174,
+        "views": 10323,
+        "engagementRate": 2.65
+      },
+      {
+        "date": "2026-01-30",
+        "platform": "tiktok",
+        "followers": 4913,
+        "followersChange": 27,
+        "reach": 6669,
+        "impressions": 14785,
+        "engagements": 262,
+        "views": 10749,
+        "engagementRate": 3.93
+      },
+      {
+        "date": "2026-01-31",
+        "platform": "tiktok",
+        "followers": 4927,
+        "followersChange": 14,
+        "reach": 5924,
+        "impressions": 11950,
+        "engagements": 169,
+        "views": 11908,
+        "engagementRate": 2.85
+      }
+    ],
+    "posts": [
+      {
+        "id": "post_001",
+        "platform": "instagram",
+        "publishedAt": "2026-01-01T21:24:00Z",
+        "contentType": "image",
+        "caption": "Recovery is part of the process. Our new sauna is open!",
+        "hashtags": [
+          "#recovery",
+          "#sauna",
+          "#wellness",
+          "#selfcare"
+        ],
+        "likes": 118,
+        "comments": 3,
+        "shares": 4,
+        "saves": 8,
+        "reach": 1325,
+        "impressions": 2398,
+        "videoViews": 0,
+        "engagementRate": 10.04
+      },
+      {
+        "id": "post_002",
+        "platform": "instagram",
+        "publishedAt": "2026-01-03T21:54:00Z",
+        "contentType": "carousel",
+        "caption": "New year, new fitness goals! Join our January challenge and transform your routine. Link in bio for details.",
+        "hashtags": [
+          "#fitness",
+          "#newyear",
+          "#essexsports",
+          "#fitnesschallenge"
+        ],
+        "likes": 10,
+        "comments": 1,
+        "shares": 0,
+        "saves": 0,
+        "reach": 50,
+        "impressions": 101,
+        "videoViews": 0,
+        "engagementRate": 22.0
+      },
+      {
+        "id": "post_003",
+        "platform": "instagram",
+        "publishedAt": "2026-01-06T21:46:00Z",
+        "contentType": "carousel",
+        "caption": "Personal training slots available this February! DM us to book your free consultation.",
+        "hashtags": [
+          "#personaltraining",
+          "#pt",
+          "#essexfitness",
+          "#goals"
+        ],
+        "likes": 298,
+        "comments": 24,
+        "shares": 8,
+        "saves": 20,
+        "reach": 3228,
+        "impressions": 8080,
+        "videoViews": 0,
+        "engagementRate": 10.84
+      },
+      {
+        "id": "post_004",
+        "platform": "instagram",
+        "publishedAt": "2026-01-07T21:08:00Z",
+        "contentType": "reel",
+        "caption": "Behind the scenes of our new gym floor! Can not wait for you to see the upgrades",
+        "hashtags": [
+          "#behindthescenes",
+          "#gymlife",
+          "#essexsportsclub",
+          "#newequipment"
+        ],
+        "likes": 10,
+        "comments": 1,
+        "shares": 0,
+        "saves": 1,
+        "reach": 138,
+        "impressions": 344,
+        "videoViews": 155,
+        "engagementRate": 8.7
+      },
+      {
+        "id": "post_005",
+        "platform": "instagram",
+        "publishedAt": "2026-01-09T21:01:00Z",
+        "contentType": "reel",
+        "caption": "Recovery is part of the process. Our new sauna is open!",
+        "hashtags": [
+          "#recovery",
+          "#sauna",
+          "#wellness",
+          "#selfcare"
+        ],
+        "likes": 122,
+        "comments": 7,
+        "shares": 8,
+        "saves": 5,
+        "reach": 2350,
+        "impressions": 5011,
+        "videoViews": 5293,
+        "engagementRate": 6.04
+      },
+      {
+        "id": "post_006",
+        "platform": "instagram",
+        "publishedAt": "2026-01-11T18:39:00Z",
+        "contentType": "reel",
+        "caption": "Class spotlight: Our spin class is back and better than ever! Book your spot now.",
+        "hashtags": [
+          "#spinclass",
+          "#cycling",
+          "#groupfitness",
+          "#essex"
+        ],
+        "likes": 346,
+        "comments": 36,
+        "shares": 22,
+        "saves": 29,
+        "reach": 5644,
+        "impressions": 16505,
+        "videoViews": 7331,
+        "engagementRate": 7.67
+      },
+      {
+        "id": "post_007",
+        "platform": "instagram",
+        "publishedAt": "2026-01-12T18:49:00Z",
+        "contentType": "image",
+        "caption": "5 exercises you can do at home when you can not make it to the gym",
+        "hashtags": [
+          "#homeworkout",
+          "#fitnesstips",
+          "#exerciseideas"
+        ],
+        "likes": 106,
+        "comments": 5,
+        "shares": 6,
+        "saves": 10,
+        "reach": 796,
+        "impressions": 1919,
+        "videoViews": 0,
+        "engagementRate": 15.95
+      },
+      {
+        "id": "post_008",
+        "platform": "instagram",
+        "publishedAt": "2026-01-15T19:06:00Z",
+        "contentType": "image",
+        "caption": "Member of the month goes to Sarah! 12 weeks of consistency and incredible results.",
+        "hashtags": [
+          "#memberofthemonth",
+          "#transformation",
+          "#fitnessjourney"
+        ],
+        "likes": 30,
+        "comments": 2,
+        "shares": 2,
+        "saves": 1,
+        "reach": 573,
+        "impressions": 1029,
+        "videoViews": 0,
+        "engagementRate": 6.11
+      },
+      {
+        "id": "post_009",
+        "platform": "instagram",
+        "publishedAt": "2026-01-16T18:54:00Z",
+        "contentType": "reel",
+        "caption": "That post-workout feeling hits different when you have been consistent all month",
+        "hashtags": [
+          "#consistency",
+          "#gains",
+          "#gymrat",
+          "#essexsportsclub"
+        ],
+        "likes": 291,
+        "comments": 27,
+        "shares": 3,
+        "saves": 21,
+        "reach": 4342,
+        "impressions": 6962,
+        "videoViews": 8559,
+        "engagementRate": 7.88
+      },
+      {
+        "id": "post_010",
+        "platform": "instagram",
+        "publishedAt": "2026-01-17T20:39:00Z",
+        "contentType": "reel",
+        "caption": "Monday motivation: Your only limit is you. Come smash your PB today!",
+        "hashtags": [
+          "#mondaymotivation",
+          "#gym",
+          "#essex",
+          "#fitfam"
+        ],
+        "likes": 10,
+        "comments": 0,
+        "shares": 0,
+        "saves": 1,
+        "reach": 118,
+        "impressions": 204,
+        "videoViews": 149,
+        "engagementRate": 9.32
+      },
+      {
+        "id": "post_011",
+        "platform": "instagram",
+        "publishedAt": "2026-01-19T21:36:00Z",
+        "contentType": "reel",
+        "caption": "5 exercises you can do at home when you can not make it to the gym",
+        "hashtags": [
+          "#homeworkout",
+          "#fitnesstips",
+          "#exerciseideas"
+        ],
+        "likes": 10,
+        "comments": 0,
+        "shares": 0,
+        "saves": 1,
+        "reach": 62,
+        "impressions": 174,
+        "videoViews": 84,
+        "engagementRate": 17.74
+      },
+      {
+        "id": "post_012",
+        "platform": "instagram",
+        "publishedAt": "2026-01-20T20:35:00Z",
+        "contentType": "reel",
+        "caption": "Weekend warriors, this one is for you. Saturday morning bootcamp at 9am.",
+        "hashtags": [
+          "#bootcamp",
+          "#weekendworkout",
+          "#essex",
+          "#fitness"
+        ],
+        "likes": 295,
+        "comments": 7,
+        "shares": 20,
+        "saves": 11,
+        "reach": 2413,
+        "impressions": 6507,
+        "videoViews": 3644,
+        "engagementRate": 13.8
+      },
+      {
+        "id": "post_013",
+        "platform": "instagram",
+        "publishedAt": "2026-01-21T18:05:00Z",
+        "contentType": "image",
+        "caption": "Monday motivation: Your only limit is you. Come smash your PB today!",
+        "hashtags": [
+          "#mondaymotivation",
+          "#gym",
+          "#essex",
+          "#fitfam"
+        ],
+        "likes": 208,
+        "comments": 19,
+        "shares": 5,
+        "saves": 14,
+        "reach": 3260,
+        "impressions": 7081,
+        "videoViews": 0,
+        "engagementRate": 7.55
+      },
+      {
+        "id": "post_014",
+        "platform": "instagram",
+        "publishedAt": "2026-01-22T20:22:00Z",
+        "contentType": "reel",
+        "caption": "Class spotlight: Our spin class is back and better than ever! Book your spot now.",
+        "hashtags": [
+          "#spinclass",
+          "#cycling",
+          "#groupfitness",
+          "#essex"
+        ],
+        "likes": 352,
+        "comments": 21,
+        "shares": 17,
+        "saves": 23,
+        "reach": 4563,
+        "impressions": 9756,
+        "videoViews": 9668,
+        "engagementRate": 9.05
+      },
+      {
+        "id": "post_015",
+        "platform": "instagram",
+        "publishedAt": "2026-01-23T21:17:00Z",
+        "contentType": "reel",
+        "caption": "Member of the month goes to Sarah! 12 weeks of consistency and incredible results.",
+        "hashtags": [
+          "#memberofthemonth",
+          "#transformation",
+          "#fitnessjourney"
+        ],
+        "likes": 199,
+        "comments": 8,
+        "shares": 3,
+        "saves": 14,
+        "reach": 3270,
+        "impressions": 5813,
+        "videoViews": 4331,
+        "engagementRate": 6.85
+      },
+      {
+        "id": "post_016",
+        "platform": "instagram",
+        "publishedAt": "2026-01-26T18:03:00Z",
+        "contentType": "reel",
+        "caption": "Monday motivation: Your only limit is you. Come smash your PB today!",
+        "hashtags": [
+          "#mondaymotivation",
+          "#gym",
+          "#essex",
+          "#fitfam"
+        ],
+        "likes": 276,
+        "comments": 35,
+        "shares": 8,
+        "saves": 15,
+        "reach": 2631,
+        "impressions": 6740,
+        "videoViews": 3130,
+        "engagementRate": 12.69
+      },
+      {
+        "id": "post_017",
+        "platform": "instagram",
+        "publishedAt": "2026-01-27T18:16:00Z",
+        "contentType": "carousel",
+        "caption": "Behind the scenes of our new gym floor! Can not wait for you to see the upgrades",
+        "hashtags": [
+          "#behindthescenes",
+          "#gymlife",
+          "#essexsportsclub",
+          "#newequipment"
+        ],
+        "likes": 37,
+        "comments": 1,
+        "shares": 0,
+        "saves": 1,
+        "reach": 450,
+        "impressions": 904,
+        "videoViews": 0,
+        "engagementRate": 8.67
+      },
+      {
+        "id": "post_018",
+        "platform": "instagram",
+        "publishedAt": "2026-01-29T20:05:00Z",
+        "contentType": "image",
+        "caption": "Recovery is part of the process. Our new sauna is open!",
+        "hashtags": [
+          "#recovery",
+          "#sauna",
+          "#wellness",
+          "#selfcare"
+        ],
+        "likes": 10,
+        "comments": 0,
+        "shares": 0,
+        "saves": 0,
+        "reach": 72,
+        "impressions": 195,
+        "videoViews": 0,
+        "engagementRate": 13.89
+      },
+      {
+        "id": "post_019",
+        "platform": "instagram",
+        "publishedAt": "2026-01-31T18:39:00Z",
+        "contentType": "reel",
+        "caption": "That post-workout feeling hits different when you have been consistent all month",
+        "hashtags": [
+          "#consistency",
+          "#gains",
+          "#gymrat",
+          "#essexsportsclub"
+        ],
+        "likes": 28,
+        "comments": 3,
+        "shares": 1,
+        "saves": 3,
+        "reach": 264,
+        "impressions": 629,
+        "videoViews": 433,
+        "engagementRate": 13.26
+      },
+      {
+        "id": "post_001",
+        "platform": "facebook",
+        "publishedAt": "2026-01-02T21:28:00Z",
+        "contentType": "image",
+        "caption": "Thank you to everyone who came to our January open day! What a turnout",
+        "hashtags": [
+          "#openday",
+          "#community",
+          "#essex"
+        ],
+        "likes": 81,
+        "comments": 4,
+        "shares": 1,
+        "saves": 3,
+        "reach": 1075,
+        "impressions": 1864,
+        "videoViews": 0,
+        "engagementRate": 8.28
+      },
+      {
+        "id": "post_002",
+        "platform": "facebook",
+        "publishedAt": "2026-01-05T21:07:00Z",
+        "contentType": "video",
+        "caption": "New classes added to the timetable: Pilates on Wednesdays and Boxing on Fridays!",
+        "hashtags": [
+          "#newclasses",
+          "#pilates",
+          "#boxing"
+        ],
+        "likes": 151,
+        "comments": 16,
+        "shares": 11,
+        "saves": 14,
+        "reach": 2170,
+        "impressions": 5407,
+        "videoViews": 5209,
+        "engagementRate": 8.85
+      },
+      {
+        "id": "post_003",
+        "platform": "facebook",
+        "publishedAt": "2026-01-10T20:44:00Z",
+        "contentType": "image",
+        "caption": "New classes added to the timetable: Pilates on Wednesdays and Boxing on Fridays!",
+        "hashtags": [
+          "#newclasses",
+          "#pilates",
+          "#boxing"
+        ],
+        "likes": 42,
+        "comments": 4,
+        "shares": 2,
+        "saves": 4,
+        "reach": 486,
+        "impressions": 1070,
+        "videoViews": 0,
+        "engagementRate": 10.7
+      },
+      {
+        "id": "post_004",
+        "platform": "facebook",
+        "publishedAt": "2026-01-12T18:48:00Z",
+        "contentType": "text",
+        "caption": "Membership offer: Join in January, get February free! Limited spots available.",
+        "hashtags": [
+          "#offer",
+          "#membership",
+          "#newyear"
+        ],
+        "likes": 12,
+        "comments": 1,
+        "shares": 0,
+        "saves": 0,
+        "reach": 64,
+        "impressions": 117,
+        "videoViews": 0,
+        "engagementRate": 20.31
+      },
+      {
+        "id": "post_005",
+        "platform": "facebook",
+        "publishedAt": "2026-01-14T21:05:00Z",
+        "contentType": "image",
+        "caption": "Thank you to everyone who came to our January open day! What a turnout",
+        "hashtags": [
+          "#openday",
+          "#community",
+          "#essex"
+        ],
+        "likes": 277,
+        "comments": 22,
+        "shares": 15,
+        "saves": 30,
+        "reach": 2139,
+        "impressions": 5086,
+        "videoViews": 0,
+        "engagementRate": 16.08
+      },
+      {
+        "id": "post_006",
+        "platform": "facebook",
+        "publishedAt": "2026-01-18T20:20:00Z",
+        "contentType": "image",
+        "caption": "New classes added to the timetable: Pilates on Wednesdays and Boxing on Fridays!",
+        "hashtags": [
+          "#newclasses",
+          "#pilates",
+          "#boxing"
+        ],
+        "likes": 50,
+        "comments": 5,
+        "shares": 1,
+        "saves": 4,
+        "reach": 277,
+        "impressions": 452,
+        "videoViews": 0,
+        "engagementRate": 21.66
+      },
+      {
+        "id": "post_007",
+        "platform": "facebook",
+        "publishedAt": "2026-01-19T21:48:00Z",
+        "contentType": "video",
+        "caption": "Big news! We are extending our opening hours starting February. Now open 5am-11pm weekdays!",
+        "hashtags": [
+          "#essexsportsclub",
+          "#fitness"
+        ],
+        "likes": 292,
+        "comments": 30,
+        "shares": 14,
+        "saves": 17,
+        "reach": 2281,
+        "impressions": 4659,
+        "videoViews": 4869,
+        "engagementRate": 15.48
+      },
+      {
+        "id": "post_008",
+        "platform": "facebook",
+        "publishedAt": "2026-01-20T18:35:00Z",
+        "contentType": "video",
+        "caption": "Thank you to everyone who came to our January open day! What a turnout",
+        "hashtags": [
+          "#openday",
+          "#community",
+          "#essex"
+        ],
+        "likes": 344,
+        "comments": 38,
+        "shares": 6,
+        "saves": 40,
+        "reach": 4861,
+        "impressions": 9036,
+        "videoViews": 6015,
+        "engagementRate": 8.8
+      },
+      {
+        "id": "post_009",
+        "platform": "facebook",
+        "publishedAt": "2026-01-22T20:26:00Z",
+        "contentType": "image",
+        "caption": "Membership offer: Join in January, get February free! Limited spots available.",
+        "hashtags": [
+          "#offer",
+          "#membership",
+          "#newyear"
+        ],
+        "likes": 129,
+        "comments": 18,
+        "shares": 7,
+        "saves": 4,
+        "reach": 2449,
+        "impressions": 4745,
+        "videoViews": 0,
+        "engagementRate": 6.45
+      },
+      {
+        "id": "post_010",
+        "platform": "facebook",
+        "publishedAt": "2026-01-25T21:21:00Z",
+        "contentType": "text",
+        "caption": "Thank you to everyone who came to our January open day! What a turnout",
+        "hashtags": [
+          "#openday",
+          "#community",
+          "#essex"
+        ],
+        "likes": 10,
+        "comments": 0,
+        "shares": 0,
+        "saves": 1,
+        "reach": 91,
+        "impressions": 244,
+        "videoViews": 0,
+        "engagementRate": 12.09
+      },
+      {
+        "id": "post_011",
+        "platform": "facebook",
+        "publishedAt": "2026-01-29T20:55:00Z",
+        "contentType": "video",
+        "caption": "Membership offer: Join in January, get February free! Limited spots available.",
+        "hashtags": [
+          "#offer",
+          "#membership",
+          "#newyear"
+        ],
+        "likes": 426,
+        "comments": 56,
+        "shares": 17,
+        "saves": 29,
+        "reach": 4254,
+        "impressions": 11248,
+        "videoViews": 6660,
+        "engagementRate": 12.41
+      },
+      {
+        "id": "post_012",
+        "platform": "facebook",
+        "publishedAt": "2026-01-30T21:42:00Z",
+        "contentType": "text",
+        "caption": "Thank you to everyone who came to our January open day! What a turnout",
+        "hashtags": [
+          "#openday",
+          "#community",
+          "#essex"
+        ],
+        "likes": 101,
+        "comments": 12,
+        "shares": 1,
+        "saves": 9,
+        "reach": 1573,
+        "impressions": 4274,
+        "videoViews": 0,
+        "engagementRate": 7.82
+      },
+      {
+        "id": "post_001",
+        "platform": "tiktok",
+        "publishedAt": "2026-01-02T21:00:00Z",
+        "contentType": "reel",
+        "caption": "Things you will hear at 6am in our gym #gymhumour #earlybird #fitness",
+        "hashtags": [
+          "#gymhumour",
+          "#earlybird",
+          "#fitness"
+        ],
+        "likes": 152,
+        "comments": 12,
+        "shares": 7,
+        "saves": 16,
+        "reach": 2753,
+        "impressions": 5947,
+        "videoViews": 4924,
+        "engagementRate": 6.79
+      },
+      {
+        "id": "post_002",
+        "platform": "tiktok",
+        "publishedAt": "2026-01-04T21:20:00Z",
+        "contentType": "reel",
+        "caption": "POV: You finally hit that deadlift PB #gymtok #fitness #pb #deadlift",
+        "hashtags": [
+          "#gymtok",
+          "#fitness",
+          "#pb",
+          "#deadlift"
+        ],
+        "likes": 10,
+        "comments": 0,
+        "shares": 0,
+        "saves": 0,
+        "reach": 177,
+        "impressions": 491,
+        "videoViews": 405,
+        "engagementRate": 5.65
+      },
+      {
+        "id": "post_003",
+        "platform": "tiktok",
+        "publishedAt": "2026-01-10T20:57:00Z",
+        "contentType": "reel",
+        "caption": "Things you will hear at 6am in our gym #gymhumour #earlybird #fitness",
+        "hashtags": [
+          "#gymhumour",
+          "#earlybird",
+          "#fitness"
+        ],
+        "likes": 275,
+        "comments": 32,
+        "shares": 11,
+        "saves": 8,
+        "reach": 3989,
+        "impressions": 11204,
+        "videoViews": 6643,
+        "engagementRate": 8.17
+      },
+      {
+        "id": "post_004",
+        "platform": "tiktok",
+        "publishedAt": "2026-01-11T21:39:00Z",
+        "contentType": "reel",
+        "caption": "POV: You finally hit that deadlift PB #gymtok #fitness #pb #deadlift",
+        "hashtags": [
+          "#gymtok",
+          "#fitness",
+          "#pb",
+          "#deadlift"
+        ],
+        "likes": 160,
+        "comments": 6,
+        "shares": 7,
+        "saves": 12,
+        "reach": 2702,
+        "impressions": 4741,
+        "videoViews": 3022,
+        "engagementRate": 6.85
+      },
+      {
+        "id": "post_005",
+        "platform": "tiktok",
+        "publishedAt": "2026-01-15T21:22:00Z",
+        "contentType": "reel",
+        "caption": "This smoothie recipe will change your post-workout game #nutrition #gym",
+        "hashtags": [
+          "#nutrition",
+          "#gym",
+          "#smoothie",
+          "#protein"
+        ],
+        "likes": 340,
+        "comments": 18,
+        "shares": 3,
+        "saves": 34,
+        "reach": 6296,
+        "impressions": 15843,
+        "videoViews": 7787,
+        "engagementRate": 6.27
+      },
+      {
+        "id": "post_006",
+        "platform": "tiktok",
+        "publishedAt": "2026-01-17T20:01:00Z",
+        "contentType": "reel",
+        "caption": "Trainer vs member: Who has better form? #fitnesschallenge #gym",
+        "hashtags": [
+          "#fitnesschallenge",
+          "#gym",
+          "#trainer"
+        ],
+        "likes": 77,
+        "comments": 11,
+        "shares": 5,
+        "saves": 2,
+        "reach": 825,
+        "impressions": 1681,
+        "videoViews": 1191,
+        "engagementRate": 11.52
+      },
+      {
+        "id": "post_007",
+        "platform": "tiktok",
+        "publishedAt": "2026-01-20T19:39:00Z",
+        "contentType": "reel",
+        "caption": "This smoothie recipe will change your post-workout game #nutrition #gym",
+        "hashtags": [
+          "#nutrition",
+          "#gym",
+          "#smoothie",
+          "#protein"
+        ],
+        "likes": 234,
+        "comments": 30,
+        "shares": 17,
+        "saves": 22,
+        "reach": 1977,
+        "impressions": 5343,
+        "videoViews": 2626,
+        "engagementRate": 15.33
+      },
+      {
+        "id": "post_008",
+        "platform": "tiktok",
+        "publishedAt": "2026-01-21T21:11:00Z",
+        "contentType": "reel",
+        "caption": "POV: You finally hit that deadlift PB #gymtok #fitness #pb #deadlift",
+        "hashtags": [
+          "#gymtok",
+          "#fitness",
+          "#pb",
+          "#deadlift"
+        ],
+        "likes": 377,
+        "comments": 22,
+        "shares": 15,
+        "saves": 29,
+        "reach": 6026,
+        "impressions": 9853,
+        "videoViews": 8693,
+        "engagementRate": 7.35
+      },
+      {
+        "id": "post_009",
+        "platform": "tiktok",
+        "publishedAt": "2026-01-22T20:51:00Z",
+        "contentType": "reel",
+        "caption": "Trainer vs member: Who has better form? #fitnesschallenge #gym",
+        "hashtags": [
+          "#fitnesschallenge",
+          "#gym",
+          "#trainer"
+        ],
+        "likes": 76,
+        "comments": 9,
+        "shares": 2,
+        "saves": 7,
+        "reach": 929,
+        "impressions": 2517,
+        "videoViews": 1969,
+        "engagementRate": 10.12
+      },
+      {
+        "id": "post_010",
+        "platform": "tiktok",
+        "publishedAt": "2026-01-23T21:00:00Z",
+        "contentType": "reel",
+        "caption": "Things you will hear at 6am in our gym #gymhumour #earlybird #fitness",
+        "hashtags": [
+          "#gymhumour",
+          "#earlybird",
+          "#fitness"
+        ],
+        "likes": 202,
+        "comments": 21,
+        "shares": 11,
+        "saves": 12,
+        "reach": 3572,
+        "impressions": 8344,
+        "videoViews": 4055,
+        "engagementRate": 6.89
+      },
+      {
+        "id": "post_011",
+        "platform": "tiktok",
+        "publishedAt": "2026-01-24T19:30:00Z",
+        "contentType": "reel",
+        "caption": "This smoothie recipe will change your post-workout game #nutrition #gym",
+        "hashtags": [
+          "#nutrition",
+          "#gym",
+          "#smoothie",
+          "#protein"
+        ],
+        "likes": 92,
+        "comments": 6,
+        "shares": 5,
+        "saves": 4,
+        "reach": 985,
+        "impressions": 2420,
+        "videoViews": 1533,
+        "engagementRate": 10.86
+      },
+      {
+        "id": "post_012",
+        "platform": "tiktok",
+        "publishedAt": "2026-01-25T21:07:00Z",
+        "contentType": "reel",
+        "caption": "Things you will hear at 6am in our gym #gymhumour #earlybird #fitness",
+        "hashtags": [
+          "#gymhumour",
+          "#earlybird",
+          "#fitness"
+        ],
+        "likes": 72,
+        "comments": 5,
+        "shares": 4,
+        "saves": 6,
+        "reach": 486,
+        "impressions": 762,
+        "videoViews": 513,
+        "engagementRate": 17.9
+      },
+      {
+        "id": "post_013",
+        "platform": "tiktok",
+        "publishedAt": "2026-01-26T19:56:00Z",
+        "contentType": "reel",
+        "caption": "This smoothie recipe will change your post-workout game #nutrition #gym",
+        "hashtags": [
+          "#nutrition",
+          "#gym",
+          "#smoothie",
+          "#protein"
+        ],
+        "likes": 29,
+        "comments": 2,
+        "shares": 1,
+        "saves": 2,
+        "reach": 556,
+        "impressions": 1183,
+        "videoViews": 1175,
+        "engagementRate": 6.12
+      },
+      {
+        "id": "post_014",
+        "platform": "tiktok",
+        "publishedAt": "2026-01-27T20:34:00Z",
+        "contentType": "reel",
+        "caption": "This smoothie recipe will change your post-workout game #nutrition #gym",
+        "hashtags": [
+          "#nutrition",
+          "#gym",
+          "#smoothie",
+          "#protein"
+        ],
+        "likes": 10,
+        "comments": 0,
+        "shares": 0,
+        "saves": 0,
+        "reach": 116,
+        "impressions": 215,
+        "videoViews": 179,
+        "engagementRate": 8.62
+      },
+      {
+        "id": "post_015",
+        "platform": "tiktok",
+        "publishedAt": "2026-01-30T18:03:00Z",
+        "contentType": "reel",
+        "caption": "Things you will hear at 6am in our gym #gymhumour #earlybird #fitness",
+        "hashtags": [
+          "#gymhumour",
+          "#earlybird",
+          "#fitness"
+        ],
+        "likes": 10,
+        "comments": 1,
+        "shares": 0,
+        "saves": 1,
+        "reach": 63,
+        "impressions": 114,
+        "videoViews": 123,
+        "engagementRate": 19.05
+      }
+    ],
+    "demographics": {
+      "gender": [
+        {
+          "label": "Female",
+          "value": 45.2
+        },
+        {
+          "label": "Male",
+          "value": 52.1
+        },
+        {
+          "label": "Other",
+          "value": 2.7
+        }
+      ],
+      "age": [
+        {
+          "label": "13-17",
+          "value": 3.2
+        },
+        {
+          "label": "18-24",
+          "value": 28.5
+        },
+        {
+          "label": "25-34",
+          "value": 32.1
+        },
+        {
+          "label": "35-44",
+          "value": 21.4
+        },
+        {
+          "label": "45-54",
+          "value": 10.2
+        },
+        {
+          "label": "55-64",
+          "value": 3.8
+        },
+        {
+          "label": "65+",
+          "value": 0.8
+        }
+      ],
+      "countries": [
+        {
+          "label": "United Kingdom",
+          "value": 89.2
+        },
+        {
+          "label": "United States",
+          "value": 4.1
+        },
+        {
+          "label": "Australia",
+          "value": 1.8
+        },
+        {
+          "label": "Ireland",
+          "value": 1.5
+        },
+        {
+          "label": "Canada",
+          "value": 1.2
+        },
+        {
+          "label": "Others",
+          "value": 2.2
+        }
+      ],
+      "cities": [
+        {
+          "label": "Brentwood, England",
+          "value": 18.4
+        },
+        {
+          "label": "Chelmsford, England",
+          "value": 12.1
+        },
+        {
+          "label": "Basildon, England",
+          "value": 8.7
+        },
+        {
+          "label": "London, England",
+          "value": 7.2
+        },
+        {
+          "label": "Southend-on-Sea, England",
+          "value": 5.6
+        },
+        {
+          "label": "Hornchurch, England",
+          "value": 4.3
+        },
+        {
+          "label": "Romford, England",
+          "value": 3.8
+        },
+        {
+          "label": "Colchester, England",
+          "value": 2.9
+        },
+        {
+          "label": "Grays, England",
+          "value": 2.1
+        },
+        {
+          "label": "Billericay, England",
+          "value": 1.8
+        }
+      ]
+    }
+  },
+  "imports": [
+    {
+      "date": "2026-02-01",
+      "filename": "2026-01-metrics.csv",
+      "platform": "instagram",
+      "records": 31
+    },
+    {
+      "date": "2026-02-01",
+      "filename": "2026-01-metrics.csv",
+      "platform": "facebook",
+      "records": 31
+    },
+    {
+      "date": "2026-02-01",
+      "filename": "2026-01-analytics.csv",
+      "platform": "tiktok",
+      "records": 31
+    }
+  ],
+  "updatedAt": "2026-02-01T14:30:00Z"
+}

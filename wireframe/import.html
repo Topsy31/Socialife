@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Import Data - Socialife Analytics</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -301,12 +302,8 @@
                     <!-- Client Selector -->
                     <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                         <label class="block text-sm font-medium text-socialife-dark mb-2">Select Client</label>
-                        <select class="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white text-socialife-dark focus:outline-none focus:ring-2 focus:ring-socialife-blue">
+                        <select id="import-client-selector" class="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white text-socialife-dark focus:outline-none focus:ring-2 focus:ring-socialife-blue">
                             <option value="">Choose a client...</option>
-                            <option value="essex-sports">Essex Sports Club</option>
-                            <option value="bellas-bakery">Bella's Bakery</option>
-                            <option value="castle-point">Castle Point Financial</option>
-                            <option value="fresh-eats">Fresh Eats Co</option>
                         </select>
                     </div>
 
@@ -330,71 +327,19 @@
                         <div class="p-6 border-b border-gray-100">
                             <h2 class="font-semibold text-socialife-dark">Files to Import</h2>
                         </div>
-
-                        <div class="divide-y divide-gray-100">
-                            <!-- File 1 - Success -->
-                            <div class="p-4 flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-lg bg-pink-100 flex items-center justify-center">
-                                    <span class="text-pink-600 font-bold text-sm">IG</span>
-                                </div>
-                                <div class="flex-1">
-                                    <p class="font-medium text-socialife-dark">instagram_insights_jan2026.csv</p>
-                                    <p class="text-sm text-gray-500">Detected: Instagram Post Insights • 45 posts</p>
-                                </div>
-                                <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm font-medium">Ready</span>
-                                <button class="text-gray-400 hover:text-gray-600">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                                    </svg>
-                                </button>
-                            </div>
-
-                            <!-- File 2 - Success -->
-                            <div class="p-4 flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center">
-                                    <span class="text-blue-600 font-bold text-sm">FB</span>
-                                </div>
-                                <div class="flex-1">
-                                    <p class="font-medium text-socialife-dark">facebook_page_insights.csv</p>
-                                    <p class="text-sm text-gray-500">Detected: Facebook Page Insights • 38 posts</p>
-                                </div>
-                                <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm font-medium">Ready</span>
-                                <button class="text-gray-400 hover:text-gray-600">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                                    </svg>
-                                </button>
-                            </div>
-
-                            <!-- File 3 - Processing -->
-                            <div class="p-4 flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-lg bg-gray-800 flex items-center justify-center">
-                                    <span class="text-white font-bold text-sm">TT</span>
-                                </div>
-                                <div class="flex-1">
-                                    <p class="font-medium text-socialife-dark">tiktok_analytics_export.csv</p>
-                                    <p class="text-sm text-gray-500">Analysing file format...</p>
-                                </div>
-                                <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm font-medium flex items-center gap-2">
-                                    <svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
-                                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                                    </svg>
-                                    Processing
-                                </span>
-                                <button class="text-gray-400 hover:text-gray-600">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                                    </svg>
-                                </button>
-                            </div>
+                        <div id="parsed-files" class="divide-y divide-gray-100">
+                            <div class="p-6 text-center text-gray-400">No files uploaded yet. Drag CSV files above or click to browse.</div>
                         </div>
+                        <div id="import-summary" class="p-6 border-t border-gray-100 flex justify-between items-center hidden"></div>
+                    </div>
 
-                        <div class="p-6 border-t border-gray-100 flex justify-between items-center">
-                            <p class="text-sm text-gray-500">3 files selected • 83 posts total</p>
-                            <button class="px-6 py-2 bg-socialife-blue text-white rounded-lg font-medium hover:bg-opacity-90 transition">
-                                Import All Data
-                            </button>
+                    <!-- CSV Preview -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-100">
+                        <div class="p-6 border-b border-gray-100">
+                            <h2 class="font-semibold text-socialife-dark">Data Preview</h2>
+                        </div>
+                        <div id="csv-preview" class="p-4">
+                            <p class="text-center text-gray-400 py-4">Upload a CSV file to see a preview</p>
                         </div>
                     </div>
                 </div>
@@ -533,8 +478,8 @@
         </div>
     </main>
 
+    <!-- Tab switching (keep inline — simple UI toggle) -->
     <script>
-        // Tab switching
         const tabFolder = document.getElementById('tab-folder');
         const tabManual = document.getElementById('tab-manual');
         const panelFolder = document.getElementById('panel-folder');
@@ -583,29 +528,11 @@
                 }
             });
         });
-
-        // Simple drag and drop interaction
-        const dropZone = document.getElementById('dropZone');
-        const fileInput = document.getElementById('fileInput');
-
-        if (dropZone && fileInput) {
-            dropZone.addEventListener('click', () => fileInput.click());
-
-            dropZone.addEventListener('dragover', (e) => {
-                e.preventDefault();
-                dropZone.classList.add('dragover');
-            });
-
-            dropZone.addEventListener('dragleave', () => {
-                dropZone.classList.remove('dragover');
-            });
-
-            dropZone.addEventListener('drop', (e) => {
-                e.preventDefault();
-                dropZone.classList.remove('dragover');
-                // Handle files
-            });
-        }
     </script>
+
+    <!-- Application JavaScript -->
+    <script src="js/app.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/import.js"></script>
 </body>
 </html>

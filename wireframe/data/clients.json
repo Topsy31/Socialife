@@ -1,0 +1,36 @@
+[
+  {
+    "id": "essex-sports-club",
+    "name": "Essex Sports Club",
+    "industry": "Sports & Fitness",
+    "status": "active",
+    "platforms": [
+      "instagram",
+      "facebook",
+      "tiktok"
+    ],
+    "primaryColour": "#10b981"
+  },
+  {
+    "id": "bellas-boutique",
+    "name": "Bella's Boutique",
+    "industry": "Fashion & Retail",
+    "status": "active",
+    "platforms": [
+      "instagram",
+      "facebook"
+    ],
+    "primaryColour": "#ec4899"
+  },
+  {
+    "id": "castle-point-financial",
+    "name": "Castle Point Financial",
+    "industry": "Financial Services",
+    "status": "active",
+    "platforms": [
+      "facebook",
+      "linkedin"
+    ],
+    "primaryColour": "#1e40af"
+  }
+]

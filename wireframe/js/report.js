@@ -8,6 +8,8 @@
 (async function () {
   'use strict';
 
+  try {
+
   // Get client ID from URL
   const params = new URLSearchParams(window.location.search);
   const clientId = params.get('client');
@@ -262,6 +264,17 @@
         `;
       }
     });
+  }
+
+  } catch (err) {
+    console.error('Report page error:', err);
+    const content = document.getElementById('report-content');
+    if (content) {
+      content.innerHTML = `<div class="p-12 text-center text-red-500">
+        Error loading report: ${err.message}<br>
+        <span class="text-sm text-gray-400">Check browser console for details</span>
+      </div>`;
+    }
   }
 
 })();

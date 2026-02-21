@@ -124,6 +124,11 @@
           <td class="px-6 py-4 text-right">
             <div class="flex items-center justify-end gap-2">
               ${isArchived ? '' : `
+                <button onclick="editClient('${c.id}')" class="p-2 text-gray-400 hover:text-socialife-blue hover:bg-blue-50 rounded-lg" title="Edit Client">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                  </svg>
+                </button>
                 <a href="report.html?client=${c.id}" class="p-2 text-gray-400 hover:text-socialife-blue hover:bg-gray-100 rounded-lg" title="View Report">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
@@ -160,8 +165,10 @@
   };
 
   // ========================================================================
-  // Multi-step modal wizard
+  // Multi-step modal wizard (supports Add and Edit modes)
   // ========================================================================
+  let _editingClientId = null; // null = add mode, string = edit mode
+
   function wireAddClient() {
     const form = document.getElementById('new-client-form');
     if (!form) return;
@@ -219,8 +226,34 @@
       if (step === 2) updateBrandPreview();
     }
 
-    // Expose globally so the close button can reset
-    window.modalStep = goToStep;
+    // Expose goToStep globally for editClient to use
+    window._goToModalStep = goToStep;
+
+    // Expose reset+go for close/cancel buttons
+    window.modalStep = function (step) {
+      _editingClientId = null;
+      resetModalToAddMode();
+      goToStep(step);
+    };
+
+    function resetModalToAddMode() {
+      const title = document.getElementById('modal-title');
+      const subtitle = document.getElementById('modal-subtitle');
+      const submitText = document.getElementById('modal-submit-text');
+      if (title) title.textContent = 'Add New Client';
+      if (subtitle) subtitle.textContent = 'Set up a new client account';
+      if (submitText) submitText.textContent = 'Create Client';
+      form.reset();
+      // Reset colour pickers to defaults
+      const cp = form.querySelector('[name="primary-colour"]');
+      const ch = form.querySelector('[name="primary-colour-hex"]');
+      const cp2 = form.querySelector('[name="secondary-colour"]');
+      const ch2 = form.querySelector('[name="secondary-colour-hex"]');
+      if (cp) cp.value = '#066aab';
+      if (ch) ch.value = '#066aab';
+      if (cp2) cp2.value = '#32373c';
+      if (ch2) ch2.value = '#32373c';
+    }
 
     function updateBrandPreview() {
       const name = form.querySelector('[name="client-name"]')?.value || 'Client Name';
@@ -279,7 +312,7 @@
       });
     }
 
-    // Form submit (on step 3)
+    // Form submit (on step 3) — handles both Add and Edit
     form.addEventListener('submit', (e) => {
       e.preventDefault();
 
@@ -293,22 +326,83 @@
       });
 
       const primaryColour = form.querySelector('[name="primary-colour"]')?.value || '#066aab';
-      const id = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
-      Store.addClient({
-        id,
-        name,
-        industry: industry || 'Other',
-        status: 'active',
-        platforms,
-        primaryColour,
-      });
+      if (_editingClientId) {
+        // Edit mode — update existing client
+        Store.updateClient(_editingClientId, {
+          name,
+          industry: industry || 'Other',
+          platforms,
+          primaryColour,
+        });
+        _editingClientId = null;
+      } else {
+        // Add mode — create new client
+        const id = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+        Store.addClient({
+          id,
+          name,
+          industry: industry || 'Other',
+          status: 'active',
+          platforms,
+          primaryColour,
+        });
+      }
 
       document.getElementById('newClientModal').classList.add('hidden');
+      resetModalToAddMode();
       goToStep(1);
       window.location.reload();
     });
   }
+
+  // ========================================================================
+  // Edit client handler (global)
+  // ========================================================================
+  window.editClient = async function (clientId) {
+    const clients = await Store.getClients();
+    const client = clients.find(c => c.id === clientId);
+    if (!client) return;
+
+    _editingClientId = clientId;
+
+    // Update modal title and submit button
+    const title = document.getElementById('modal-title');
+    const subtitle = document.getElementById('modal-subtitle');
+    const submitText = document.getElementById('modal-submit-text');
+    if (title) title.textContent = 'Edit Client';
+    if (subtitle) subtitle.textContent = `Editing ${client.name}`;
+    if (submitText) submitText.textContent = 'Save Changes';
+
+    // Pre-populate the form
+    const form = document.getElementById('new-client-form');
+    if (!form) return;
+
+    // Step 1: Profile
+    const nameInput = form.querySelector('[name="client-name"]');
+    const industrySelect = form.querySelector('[name="industry"]');
+    if (nameInput) nameInput.value = client.name;
+    if (industrySelect) industrySelect.value = client.industry || '';
+
+    // Step 2: Branding
+    const primaryColour = form.querySelector('[name="primary-colour"]');
+    const primaryHex = form.querySelector('[name="primary-colour-hex"]');
+    if (primaryColour && client.primaryColour) {
+      primaryColour.value = client.primaryColour;
+      if (primaryHex) primaryHex.value = client.primaryColour;
+    }
+
+    // Step 3: Platforms — check the correct boxes
+    form.querySelectorAll('input[name="platform"]').forEach(cb => {
+      cb.checked = (client.platforms || []).includes(cb.value);
+    });
+
+    // Open the modal at step 1 (use _goToModalStep to avoid resetting form)
+    document.getElementById('newClientModal').classList.remove('hidden');
+    if (window._goToModalStep) {
+      window._goToModalStep(1);
+    }
+  };
 
   // ========================================================================
   // Init

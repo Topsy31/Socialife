@@ -48,9 +48,14 @@ const Store = (() => {
       return _clients;
     }
 
-    // Merge any session edits (new clients, status changes)
+    // Merge any session edits (new clients, updates, status changes)
     if (_sessionEdits.newClients) {
       _clients = [..._clients, ..._sessionEdits.newClients];
+    }
+    if (_sessionEdits.updatedClients) {
+      _clients = _clients.map(c =>
+        _sessionEdits.updatedClients[c.id] ? { ...c, ..._sessionEdits.updatedClients[c.id] } : c
+      );
     }
     if (_sessionEdits.archivedIds) {
       _clients = _clients.map(c =>
@@ -335,6 +340,16 @@ const Store = (() => {
   }
 
   /**
+   * Update an existing client (sessionStorage only for demo).
+   */
+  function updateClient(clientId, updatedData) {
+    if (!_sessionEdits.updatedClients) _sessionEdits.updatedClients = {};
+    _sessionEdits.updatedClients[clientId] = updatedData;
+    _saveSessionEdits();
+    _clients = null; // Force reload
+  }
+
+  /**
    * Archive a client (sessionStorage only for demo).
    */
   function archiveClient(clientId) {
@@ -367,6 +382,7 @@ const Store = (() => {
     getHashtags,
     getTimeSeries,
     addClient,
+    updateClient,
     archiveClient,
     getSelectedClientId,
     setSelectedClientId,

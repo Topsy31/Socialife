@@ -177,8 +177,8 @@
             <!-- Modal Header -->
             <div class="p-6 border-b border-gray-100 flex items-center justify-between sticky top-0 bg-white z-10">
                 <div>
-                    <h2 class="text-xl font-semibold text-socialife-dark">Add New Client</h2>
-                    <p class="text-sm text-gray-500">Set up a new client account</p>
+                    <h2 id="modal-title" class="text-xl font-semibold text-socialife-dark">Add New Client</h2>
+                    <p id="modal-subtitle" class="text-sm text-gray-500">Set up a new client account</p>
                 </div>
                 <button type="button" onclick="document.getElementById('newClientModal').classList.add('hidden'); window.modalStep && window.modalStep(1);" class="p-2 hover:bg-gray-100 rounded-lg">
                     <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -385,7 +385,7 @@
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                         </button>
                         <button type="submit" id="modal-submit-btn" class="px-6 py-2 bg-socialife-blue text-white rounded-lg hover:bg-opacity-90 flex items-center gap-2 hidden">
-                            Create Client
+                            <span id="modal-submit-text">Create Client</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                         </button>
                     </div>

@@ -164,8 +164,12 @@ const App = (() => {
     `;
   }
 
-  // Initialise nav on page load
-  document.addEventListener('DOMContentLoaded', initNav);
+  // Initialise nav on page load (run immediately if DOM already ready)
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNav);
+  } else {
+    initNav();
+  }
 
   return {
     PLATFORMS,

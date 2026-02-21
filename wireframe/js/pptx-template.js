@@ -454,6 +454,7 @@ const PptxTemplate = (() => {
     if (!clientInfo) throw new Error('Client not found');
 
     const summary = await Store.getClientSummary(clientId);
+    if (!summary) throw new Error('Could not load client summary data');
     const posts = await Store.getPosts(clientId, { sortBy: 'reach' });
     const demographics = await Store.getDemographics(clientId);
     const hashtags = await Store.getHashtags(clientId);

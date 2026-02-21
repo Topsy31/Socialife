@@ -203,6 +203,13 @@
     wireAddClient();
   } catch (err) {
     console.error('Clients page error:', err);
+    const tbody = document.getElementById('client-table-body');
+    if (tbody) {
+      tbody.innerHTML = `<tr><td colspan="5" class="px-6 py-12 text-center text-red-500">
+        Error loading data: ${err.message}<br>
+        <span class="text-sm text-gray-400">Check browser console for details</span>
+      </td></tr>`;
+    }
   }
 
 })();

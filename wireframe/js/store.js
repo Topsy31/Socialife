@@ -7,7 +7,8 @@
  */
 
 const Store = (() => {
-  const DATA_BASE = 'data';
+  // Resolve data path relative to current page location
+  const DATA_BASE = './data';
   let _clients = null;
   let _clientData = {};
   let _sessionEdits = {};
@@ -33,8 +34,19 @@ const Store = (() => {
    */
   async function getClients() {
     if (_clients) return _clients;
-    const res = await fetch(`${DATA_BASE}/clients.json`);
-    _clients = await res.json();
+    try {
+      const res = await fetch(`${DATA_BASE}/clients.json`);
+      if (!res.ok) {
+        console.error('Failed to load clients.json:', res.status, res.statusText);
+        _clients = [];
+        return _clients;
+      }
+      _clients = await res.json();
+    } catch (e) {
+      console.error('Failed to fetch clients.json:', e);
+      _clients = [];
+      return _clients;
+    }
 
     // Merge any session edits (new clients, status changes)
     if (_sessionEdits.newClients) {
@@ -60,6 +72,7 @@ const Store = (() => {
       _clientData[clientId] = await res.json();
       return _clientData[clientId];
     } catch (e) {
+      console.error(`Failed to fetch client ${clientId}:`, e);
       return null;
     }
   }

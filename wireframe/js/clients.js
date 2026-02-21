@@ -160,15 +160,130 @@
   };
 
   // ========================================================================
-  // Add client handler
+  // Multi-step modal wizard
   // ========================================================================
   function wireAddClient() {
     const form = document.getElementById('new-client-form');
     if (!form) return;
 
+    const steps = [
+      document.getElementById('modal-step-1'),
+      document.getElementById('modal-step-2'),
+      document.getElementById('modal-step-3'),
+    ];
+    const indicators = document.querySelectorAll('#step-indicators [data-step]');
+    const lines = document.querySelectorAll('#step-indicators .step-line');
+    const nextBtn = document.getElementById('modal-next-btn');
+    const backBtn = document.getElementById('modal-back-btn');
+    const cancelBtn = document.getElementById('modal-cancel-btn');
+    const submitBtn = document.getElementById('modal-submit-btn');
+
+    let currentStep = 1;
+
+    function goToStep(step) {
+      currentStep = step;
+
+      // Show/hide step panels
+      steps.forEach((el, i) => {
+        if (el) el.classList.toggle('hidden', i + 1 !== step);
+      });
+
+      // Update step indicators
+      indicators.forEach(ind => {
+        const s = parseInt(ind.dataset.step);
+        const dot = ind.querySelector('.step-dot');
+        const label = ind.querySelector('.step-label');
+        if (s <= step) {
+          dot.className = 'step-dot w-8 h-8 rounded-full bg-socialife-blue text-white flex items-center justify-center text-sm font-medium';
+          label.className = 'step-label text-sm font-medium text-socialife-dark';
+        } else {
+          dot.className = 'step-dot w-8 h-8 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center text-sm font-medium';
+          label.className = 'step-label text-sm text-gray-500';
+        }
+      });
+
+      // Update connector lines
+      lines.forEach((line, i) => {
+        line.className = i < step - 1
+          ? 'step-line flex-1 h-0.5 bg-socialife-blue mx-4'
+          : 'step-line flex-1 h-0.5 bg-gray-200 mx-4';
+      });
+
+      // Show/hide buttons
+      backBtn.classList.toggle('hidden', step === 1);
+      cancelBtn.classList.toggle('hidden', step > 1);
+      nextBtn.classList.toggle('hidden', step === 3);
+      submitBtn.classList.toggle('hidden', step < 3);
+
+      // Update branding preview on step 2
+      if (step === 2) updateBrandPreview();
+    }
+
+    // Expose globally so the close button can reset
+    window.modalStep = goToStep;
+
+    function updateBrandPreview() {
+      const name = form.querySelector('[name="client-name"]')?.value || 'Client Name';
+      const industry = form.querySelector('[name="industry"]')?.value || 'Industry';
+      const colour = form.querySelector('[name="primary-colour"]')?.value || '#066aab';
+      const initials = name.split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase();
+
+      const preview = document.getElementById('brand-preview');
+      const previewName = document.getElementById('preview-name');
+      const previewIndustry = document.getElementById('preview-industry');
+      if (preview) {
+        const icon = preview.querySelector('div');
+        if (icon) {
+          icon.style.background = colour;
+          icon.textContent = initials || '--';
+        }
+      }
+      if (previewName) previewName.textContent = name;
+      if (previewIndustry) previewIndustry.textContent = industry;
+    }
+
+    // Sync colour picker with hex input
+    const colourPicker = form.querySelector('[name="primary-colour"]');
+    const colourHex = form.querySelector('[name="primary-colour-hex"]');
+    const colourPicker2 = form.querySelector('[name="secondary-colour"]');
+    const colourHex2 = form.querySelector('[name="secondary-colour-hex"]');
+
+    if (colourPicker && colourHex) {
+      colourPicker.addEventListener('input', () => { colourHex.value = colourPicker.value; updateBrandPreview(); });
+      colourHex.addEventListener('input', () => { if (/^#[0-9a-f]{6}$/i.test(colourHex.value)) colourPicker.value = colourHex.value; });
+    }
+    if (colourPicker2 && colourHex2) {
+      colourPicker2.addEventListener('input', () => { colourHex2.value = colourPicker2.value; });
+      colourHex2.addEventListener('input', () => { if (/^#[0-9a-f]{6}$/i.test(colourHex2.value)) colourPicker2.value = colourHex2.value; });
+    }
+
+    // Next button
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        // Validate step 1
+        if (currentStep === 1) {
+          const name = form.querySelector('[name="client-name"]')?.value?.trim();
+          if (!name) {
+            form.querySelector('[name="client-name"]')?.focus();
+            return;
+          }
+        }
+        if (currentStep < 3) goToStep(currentStep + 1);
+      });
+    }
+
+    // Back button
+    if (backBtn) {
+      backBtn.addEventListener('click', () => {
+        if (currentStep > 1) goToStep(currentStep - 1);
+      });
+    }
+
+    // Form submit (on step 3)
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const name = form.querySelector('[name="client-name"]')?.value;
+
+      const name = form.querySelector('[name="client-name"]')?.value?.trim();
       const industry = form.querySelector('[name="industry"]')?.value;
       if (!name) return;
 
@@ -177,6 +292,7 @@
         platforms.push(cb.value);
       });
 
+      const primaryColour = form.querySelector('[name="primary-colour"]')?.value || '#066aab';
       const id = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
       Store.addClient({
@@ -185,10 +301,11 @@
         industry: industry || 'Other',
         status: 'active',
         platforms,
-        primaryColour: '#066aab',
+        primaryColour,
       });
 
       document.getElementById('newClientModal').classList.add('hidden');
+      goToStep(1);
       window.location.reload();
     });
   }
